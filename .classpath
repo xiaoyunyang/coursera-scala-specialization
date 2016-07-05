@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="example/project"/>
+	<classpathentry kind="src" path="example/src/main/scala"/>
+	<classpathentry kind="src" path="example/src/test/scala"/>
+	<classpathentry kind="src" path="recfun/project"/>
+	<classpathentry kind="src" path="recfun/src/main/scala"/>
+	<classpathentry kind="src" path="recfun/src/test/scala"/>
+	<classpathentry kind="lib" path="recfun/target/scala-2.11/progfun1-recfun_2.11-0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="recfun/target/scala-2.11/test-classes"/>
+</classpath>
