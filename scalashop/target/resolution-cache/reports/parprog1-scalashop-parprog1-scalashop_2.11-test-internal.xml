@@ -7,15 +7,15 @@
 		revision="0.1-SNAPSHOT"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20160619220900"/>
+		date="20160705133618"/>
 	<dependencies>
 		<module organisation="com.storm-enroute" name="scalameter_2.11">
-			<revision name="0.6" status="release" pubdate="20140716095119" resolver="public" artresolver="public" homepage="http://scalameter.github.io/" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="11">
+			<revision name="0.6" status="release" pubdate="20140716095119" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalameter.github.io/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="11">
 				<license name="BSD-style" url="http://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="successful" details="" size="2936" time="126" location="/Users/xiaoyun/.ivy2/cache/com.storm-enroute/scalameter_2.11/ivy-0.6.xml" searched="true" original-local-location="/Users/xiaoyun/.ivy2/cache/com.storm-enroute/scalameter_2.11/ivy-0.6.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.pom"/>
+				<metadata-artifact status="no" details="" size="3859" time="0" location="/Users/xiaoyun/.ivy2/cache/com.storm-enroute/scalameter_2.11/ivy-0.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.pom"/>
 				<caller organisation="parprog1-scalashop" name="parprog1-scalashop_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="0.6" rev-constraint-default="0.6" rev-constraint-dynamic="0.6" callerrev="0.1-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="scalameter_2.11" type="jar" ext="jar" status="successful" details="" size="859321" time="351" location="/Users/xiaoyun/.ivy2/cache/com.storm-enroute/scalameter_2.11/jars/scalameter_2.11-0.6.jar">
+					<artifact name="scalameter_2.11" type="jar" ext="jar" status="no" details="" size="859321" time="0" location="/Users/xiaoyun/.ivy2/cache/com.storm-enroute/scalameter_2.11/jars/scalameter_2.11-0.6.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.jar"/>
 					</artifact>
 				</artifacts>
@@ -61,7 +61,7 @@
 				<metadata-artifact status="no" details="" size="2819" time="0" location="/Users/xiaoyun/.ivy2/cache/xml-apis/xml-apis/ivy-1.3.04.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom"/>
 				<caller organisation="org.jfree" name="jfreechart" conf="compile, runtime" rev="1.3.04" rev-constraint-default="1.3.04" rev-constraint-dynamic="1.3.04" callerrev="1.0.17"/>
 				<artifacts>
-					<artifact name="xml-apis" type="jar" ext="jar" status="successful" details="" size="194354" time="197" location="/Users/xiaoyun/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.3.04.jar">
+					<artifact name="xml-apis" type="jar" ext="jar" status="no" details="" size="194354" time="0" location="/Users/xiaoyun/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.3.04.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar"/>
 					</artifact>
 				</artifacts>
@@ -93,12 +93,12 @@
 			</revision>
 		</module>
 		<module organisation="com.github.scala-blitz" name="scala-blitz_2.11">
-			<revision name="1.1" status="release" pubdate="20140617024800" resolver="public" artresolver="public" homepage="http://scala-blitz.github.com" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="7">
+			<revision name="1.1" status="release" pubdate="20140617024800" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scala-blitz.github.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="7">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="2650" time="127" location="/Users/xiaoyun/.ivy2/cache/com.github.scala-blitz/scala-blitz_2.11/ivy-1.1.xml" searched="true" original-local-location="/Users/xiaoyun/.ivy2/cache/com.github.scala-blitz/scala-blitz_2.11/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.pom"/>
+				<metadata-artifact status="no" details="" size="3338" time="0" location="/Users/xiaoyun/.ivy2/cache/com.github.scala-blitz/scala-blitz_2.11/ivy-1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.pom"/>
 				<caller organisation="parprog1-scalashop" name="parprog1-scalashop_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="0.1-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="scala-blitz_2.11" type="jar" ext="jar" status="successful" details="" size="3236873" time="1061" location="/Users/xiaoyun/.ivy2/cache/com.github.scala-blitz/scala-blitz_2.11/jars/scala-blitz_2.11-1.1.jar">
+					<artifact name="scala-blitz_2.11" type="jar" ext="jar" status="no" details="" size="3236873" time="0" location="/Users/xiaoyun/.ivy2/cache/com.github.scala-blitz/scala-blitz_2.11/jars/scala-blitz_2.11-1.1.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.jar"/>
 					</artifact>
 				</artifacts>

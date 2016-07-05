@@ -1,7 +1,7 @@
 [0m[[0minfo[0m] [0mRunning scalashop.ScalaShop [0m
 [0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
 [0m[[0mdebug[0m] [0m  Classpath:[0m
-[0m[[0mdebug[0m] [0m	/Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/scala-2.11/classes[0m
+[0m[[0mdebug[0m] [0m	/Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/scala-2.11/classes[0m
 [0m[[0mdebug[0m] [0m	/Users/xiaoyun/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar[0m
 [0m[[0mdebug[0m] [0m	/Users/xiaoyun/.ivy2/cache/org.scalatest/scalatest_2.11/bundles/scalatest_2.11-2.2.4.jar[0m
 [0m[[0mdebug[0m] [0m	/Users/xiaoyun/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.2.jar[0m
@@ -18,24 +18,20 @@
 [0m[[0mdebug[0m] [0mWaiting 2 s to let AWT thread exit.[0m
 [0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-0[0m
 [0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-0[0m
+[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Thread-1,5,system][0m
 [0m[[0mdebug[0m] [0mNot interrupting system thread Thread[TimerQueue,5,system][0m
-[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-4[0m
-[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-4[0m
-[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Java2D Disposer,10,system][0m
-[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-6[0m
-[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-6[0m
 [0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-3[0m
 [0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-3[0m
-[0m[[0mdebug[0m] [0mInterrupting thread AWT-EventQueue-0[0m
-[0m[[0mdebug[0m] [0m	Interrupted AWT-EventQueue-0[0m
-[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-2[0m
-[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-2[0m
-[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Java2D Queue Flusher,10,system][0m
 [0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-7[0m
 [0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-7[0m
-[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-1[0m
-[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-1[0m
-[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Thread-1,5,system][0m
+[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-6[0m
+[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-6[0m
+[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-4[0m
+[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-4[0m
+[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Java2D Queue Flusher,10,system][0m
+[0m[[0mdebug[0m] [0mInterrupting thread AWT-EventQueue-0[0m
+[0m[[0mdebug[0m] [0m	Interrupted AWT-EventQueue-0[0m
+[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Java2D Disposer,10,system][0m
 [0m[[0mdebug[0m] [0m	Thread AWT-EventQueue-0 exited.[0m
 [0m[[0mdebug[0m] [0mWaiting for thread AWT-EventQueue-0 to terminate.[0m
 [0m[[0mdebug[0m] [0m	Thread AWT-EventQueue-0 exited.[0m
@@ -44,21 +40,17 @@
 [0m[[0mdebug[0m] [0mWaiting 2 s to let AWT thread exit.[0m
 [0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-0[0m
 [0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-0[0m
+[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Thread-1,5,system][0m
 [0m[[0mdebug[0m] [0mNot interrupting system thread Thread[TimerQueue,5,system][0m
-[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-4[0m
-[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-4[0m
-[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Java2D Disposer,10,system][0m
-[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-6[0m
-[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-6[0m
 [0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-3[0m
 [0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-3[0m
-[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-2[0m
-[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-2[0m
-[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Java2D Queue Flusher,10,system][0m
 [0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-7[0m
 [0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-7[0m
-[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-1[0m
-[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-1[0m
-[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Thread-1,5,system][0m
+[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-6[0m
+[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-6[0m
+[0m[[0mdebug[0m] [0mInterrupting thread ForkJoinPool-1-worker-4[0m
+[0m[[0mdebug[0m] [0m	Interrupted ForkJoinPool-1-worker-4[0m
+[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Java2D Queue Flusher,10,system][0m
+[0m[[0mdebug[0m] [0mNot interrupting system thread Thread[Java2D Disposer,10,system][0m
 [0m[[0mdebug[0m] [0mSandboxed run complete..[0m
 [0m[[0mdebug[0m] [0mExited with code 0[0m

@@ -7,7 +7,7 @@
 		revision="0.1-SNAPSHOT"
 		conf="compile"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20160619220900"/>
+		date="20160705133618"/>
 	<dependencies>
 		<module organisation="org.scala-lang.modules" name="scala-swing_2.11">
 			<revision name="1.0.1" status="release" pubdate="20140416052627" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="8">
@@ -22,12 +22,12 @@
 			</revision>
 		</module>
 		<module organisation="com.github.scala-blitz" name="scala-blitz_2.11">
-			<revision name="1.1" status="release" pubdate="20140617024800" resolver="public" artresolver="public" homepage="http://scala-blitz.github.com" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="7">
+			<revision name="1.1" status="release" pubdate="20140617024800" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scala-blitz.github.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="7">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="2650" time="127" location="/Users/xiaoyun/.ivy2/cache/com.github.scala-blitz/scala-blitz_2.11/ivy-1.1.xml" searched="true" original-local-location="/Users/xiaoyun/.ivy2/cache/com.github.scala-blitz/scala-blitz_2.11/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.pom"/>
+				<metadata-artifact status="no" details="" size="3338" time="0" location="/Users/xiaoyun/.ivy2/cache/com.github.scala-blitz/scala-blitz_2.11/ivy-1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.pom"/>
 				<caller organisation="parprog1-scalashop" name="parprog1-scalashop_2.11" conf="compile" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="0.1-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="scala-blitz_2.11" type="jar" ext="jar" status="successful" details="" size="3236873" time="1061" location="/Users/xiaoyun/.ivy2/cache/com.github.scala-blitz/scala-blitz_2.11/jars/scala-blitz_2.11-1.1.jar">
+					<artifact name="scala-blitz_2.11" type="jar" ext="jar" status="no" details="" size="3236873" time="0" location="/Users/xiaoyun/.ivy2/cache/com.github.scala-blitz/scala-blitz_2.11/jars/scala-blitz_2.11-1.1.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.jar"/>
 					</artifact>
 				</artifacts>

@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/}root...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/}root...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->org.scala-lang#scala-library;2.11.7 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7104e33f[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@68b38281[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.7[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.7 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.11.7] org.scala-lang#scala-library;2.11.7[0m
@@ -65,7 +65,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->org.scalatest#scalatest_2.11;2.2.4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->com.storm-enroute#scalameter-core_2.11;0.6 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.storm-enroute#scalameter-core_2.11;0.6 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5f3c5c91[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@eeb192a[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.storm-enroute#scalameter-core_2.11;0.6[0m
 [0m[[0mdebug[0m] [0m	found com.storm-enroute#scalameter-core_2.11;0.6 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->com.storm-enroute#scalameter-core_2.11;0.6 [compile->runtime][0m
@@ -120,22 +120,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->com.storm-enroute#scalameter-core_2.11;0.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->com.github.scala-blitz#scala-blitz_2.11;1.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.github.scala-blitz#scala-blitz_2.11;1.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@26421e78[0m
-[0m[[0minfo[0m] [0mResolving com.github.scala-blitz#scala-blitz_2.11;1.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: sbt.ivyint.MergedDescriptors@26421e78[0m
-[0m[[0mdebug[0m] [0m		tried /Users/xiaoyun/.ivy2/local/com.github.scala-blitz/scala-blitz_2.11/1.1/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for com.github.scala-blitz#scala-blitz_2.11;1.1[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for com.github.scala-blitz#scala-blitz_2.11;1.1[0m
-[0m[[0mdebug[0m] [0m		=> https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.pom (1.1)[0m
-[0m[[0mdebug[0m] [0mdownloading https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.scala-blitz#scala-blitz_2.11;1.1!scala-blitz_2.11.pom(pom.original) (127ms)[0m
-[0m[[0mdebug[0m] [0m		tried /Users/xiaoyun/.ivy2/local/com.github.scala-blitz/scala-blitz_2.11/1.1/jars/scala-blitz_2.11.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.jar[0m
-[0m[[0mdebug[0m] [0m	found com.github.scala-blitz#scala-blitz_2.11;1.1 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@74519922[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.scala-blitz#scala-blitz_2.11;1.1[0m
+[0m[[0mdebug[0m] [0m	found com.github.scala-blitz#scala-blitz_2.11;1.1 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->com.github.scala-blitz#scala-blitz_2.11;1.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->com.github.scala-blitz#scala-blitz_2.11;1.1 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.scala-blitz#scala-blitz_2.11;1.1->org.scala-lang#scala-library;2.11.1 [compile->master(compile)][0m
@@ -155,7 +142,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->com.github.scala-blitz#scala-blitz_2.11;1.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->org.scala-lang.modules#scala-swing_2.11;1.0.1 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang.modules#scala-swing_2.11;1.0.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@63ea7836[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@73882136[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang.modules#scala-swing_2.11;1.0.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang.modules#scala-swing_2.11;1.0.1 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->org.scala-lang.modules#scala-swing_2.11;1.0.1 [compile->runtime][0m
@@ -403,22 +390,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->junit#junit;4.10 [test->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->com.storm-enroute#scalameter_2.11;0.6 [test->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.storm-enroute#scalameter_2.11;0.6 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1fab44f6[0m
-[0m[[0minfo[0m] [0mResolving com.storm-enroute#scalameter_2.11;0.6 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: sbt.ivyint.MergedDescriptors@1fab44f6[0m
-[0m[[0mdebug[0m] [0m		tried /Users/xiaoyun/.ivy2/local/com.storm-enroute/scalameter_2.11/0.6/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for com.storm-enroute#scalameter_2.11;0.6[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for com.storm-enroute#scalameter_2.11;0.6[0m
-[0m[[0mdebug[0m] [0m		=> https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.pom (0.6)[0m
-[0m[[0mdebug[0m] [0mdownloading https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.storm-enroute#scalameter_2.11;0.6!scalameter_2.11.pom(pom.original) (126ms)[0m
-[0m[[0mdebug[0m] [0m		tried /Users/xiaoyun/.ivy2/local/com.storm-enroute/scalameter_2.11/0.6/jars/scalameter_2.11.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.jar[0m
-[0m[[0mdebug[0m] [0m	found com.storm-enroute#scalameter_2.11;0.6 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@56e16543[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.storm-enroute#scalameter_2.11;0.6[0m
+[0m[[0mdebug[0m] [0m	found com.storm-enroute#scalameter_2.11;0.6 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->com.storm-enroute#scalameter_2.11;0.6 [test->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT->com.storm-enroute#scalameter_2.11;0.6 [test->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.storm-enroute#scalameter_2.11;0.6->org.scala-lang#scala-library;2.11.1 [compile->master(compile)][0m
@@ -1013,54 +987,38 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.11.7!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalatest#scalatest_2.11;2.2.4!scalatest_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.storm-enroute#scalameter-core_2.11;0.6!scalameter-core_2.11.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/com/github/scala-blitz/scala-blitz_2.11/1.1/scala-blitz_2.11-1.1.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.github.scala-blitz#scala-blitz_2.11;1.1!scala-blitz_2.11.jar (1061ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.scala-blitz#scala-blitz_2.11;1.1!scala-blitz_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-swing_2.11;1.0.1!scala-swing_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.2!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.2!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.commons#commons-math3;3.2!commons-math3.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] junit#junit;4.10!junit.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/com/storm-enroute/scalameter_2.11/0.6/scalameter_2.11-0.6.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.storm-enroute#scalameter_2.11;0.6!scalameter_2.11.jar (351ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.storm-enroute#scalameter_2.11;0.6!scalameter_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.hamcrest#hamcrest-core;1.1!hamcrest-core.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.wookietreiber#scala-chart_2.11;0.4.2!scala-chart_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-tools.testing#test-interface;0.5!test-interface.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.jfree#jfreechart;1.0.17!jfreechart.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.jfree#jcommon;1.0.21!jcommon.jar[0m
-[0m[[0mdebug[0m] [0m		tried /Users/xiaoyun/.ivy2/local/xml-apis/xml-apis/1.3.04/jars/xml-apis.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] xml-apis#xml-apis;1.3.04!xml-apis.jar (197ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] xml-apis#xml-apis;1.3.04!xml-apis.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.7!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.7!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.4!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.12.1!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1194ms :: artifacts dl 1616ms[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT compile produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT runtime produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT test produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT provided produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT optional produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT compile-internal produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT runtime-internal produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT test-internal produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT plugin produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT sources produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT docs produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT pom produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT scala-tool produced in /Users/xiaoyun/Documents/dev/Scala_FP/Coursera/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1194ms resolve - 1616ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 463ms :: artifacts dl 19ms[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT compile produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT runtime produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT test produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT provided produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT optional produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT compile-internal produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT runtime-internal produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT test-internal produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT plugin produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT sources produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT docs produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT pom produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for parprog1-scalashop#parprog1-scalashop_2.11;0.1-SNAPSHOT scala-tool produced in /Users/xiaoyun/Documents/dev/Scala_FP/coursera-scala-specialization/scalashop/target/resolution-cache/reports/parprog1-scalashop-parprog1-scalashop_2.11-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (463ms resolve - 19ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
