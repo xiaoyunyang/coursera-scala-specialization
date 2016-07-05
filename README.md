@@ -6,7 +6,8 @@ Instructor: **Martin Ordesky**
 [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1) -
 * Evaluation strategy and recursion: [fixedpoint.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1/fixedpoint.sc) demonstrates writing a basic function in scala.
  [eval_strategy.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1/eval_strategy.sc) illustrates call-by-vale (imperative, C) versus call-by-name (lazy evaluation).
- ``` scala
+
+ ```scala
   def constOne(x: Int, y: => Int) = 1   //y has a type '=> Int' which means y is call-by-name
   constOne(1+2, loop) //reduces to 1
   constOne(loop, 1+2) //infinite cycle
