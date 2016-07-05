@@ -28,9 +28,7 @@ class Nil[T] extends MyList[T] {
   def isEmpty: Boolean = true
   def head: Nothing = throw new NoSuchElementException("Nil.head")
   def tail: Nothing = throw new NoSuchElementException("Nil.tail")
-  
 
-  
   override def toString = "List(Nil)"
 }
 object Nil2 extends MyList[Nothing] { //List is a bottom type (i.e., subtype of every type)
@@ -40,6 +38,7 @@ object Nil2 extends MyList[Nothing] { //List is a bottom type (i.e., subtype of 
   override def toString = "List(Nil)"
 }
 
+//Companion object
 object MyList {
   //List(1,2) = List.apply(1,2)
   def apply[T](x1: T, x2: T): MyList[T] = new Cons(x1, new Cons(x2, new Nil))

@@ -1,6 +1,6 @@
 package week3
 
-object class_heirarchy {
+object class_hierarchy {
 	//However, you can't instantiate abstract classes
 	//new IntSet
   val t1 = new NonEmpty(3, new Empty, new Empty)  //> t1  : week3.NonEmpty = {.3.}

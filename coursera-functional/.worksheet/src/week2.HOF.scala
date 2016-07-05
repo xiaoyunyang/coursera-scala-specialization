@@ -124,5 +124,4 @@ object HOF {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; d
 	val websites = List(google, yahoo, looseleaf);System.out.println("""websites  : List[(String, String)] = """ + $show(websites ));$skip(44); val res$19 = 
 	websites.map(x => andrewEmail(x._1)(x._2));System.out.println("""res19: List[String] = """ + $show(res$19))}
 	
-	
 }

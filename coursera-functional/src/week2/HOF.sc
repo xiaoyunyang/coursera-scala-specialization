@@ -143,5 +143,4 @@ object HOF {
 	websites.map(x => andrewEmail(x._1)(x._2))//> res19: List[String] = List(andrew@google.com, andrew@yahoo.com, andrew@loos
                                                   //| eleaf.us)
 	
-	
 }
