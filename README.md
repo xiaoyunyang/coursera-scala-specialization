@@ -5,12 +5,12 @@ Instructor: **Martin Ordesky**
 #### Topics
 [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1) -
 * Evaluation strategy and recursion: [fixedpoint.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1/fixedpoint.sc) demonstrates writing a basic function in scala.
- [eval_strategy.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1/eval_strategy.sc) illustrates call-by-name versus call-by-value (lazy evaluation).
-```scala
-def constOne(x: Int, y: => Int) = 1   //y has a type '=> Int' which means y is call-by-name
-constOne(1+2, loop) //reduces to 1
-constOne(loop, 1+2) //infinite cycle
-```
+ [eval_strategy.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1/eval_strategy.sc) illustrates call-by-vale (imperative, C) versus call-by-name (lazy evaluation).
+  ```scala
+    def constOne(x: Int, y: => Int) = 1   //y has a type '=> Int' which means y is call-by-name
+    constOne(1+2, loop) //reduces to 1
+    constOne(loop, 1+2) //infinite cycle
+  ```
 
 [Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week2) -
 * higher order functions - basically functions that has functions as arguments. See [HOF.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week2/HOF.sc) for some examples.
@@ -50,7 +50,7 @@ Instructor: **Martin Ordesky**
 Instructors: **Viktor Kuncak and Aleksander Prokopec**
 
 #### Topics
-[Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-parallel/src/week1)
+[Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-parallel/src/week1) -
 * Deadlock
 * Parallelism on the JVM
 * First Class Tasks
@@ -61,10 +61,10 @@ Instructors: **Viktor Kuncak and Aleksander Prokopec**
   * [HorizontalBoxBlur](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/scalashop/src/main/scala/scalashop/HorizontalBoxBlur.scala) - singleton which implements methods blur and parBlur to blur horizontal pixels of the image in parallel
   * [VerticalBoxBlur](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/scalashop/src/main/scala/scalashop/VerticalBoxBlur.scala) - singleton which implements methods blur and parBlur to blur vertical pixels of the image in parallel
   * To run the ScalaShop program, in the console:
-  ```
-    sbt
-    > runMain scalashop.ScalaShop
-  ```
+    ```
+      sbt
+      > runMain scalashop.ScalaShop
+    ```
 2. Reductions and Prefix Sums - demonstrates basic task parallel algorithms
 3. K-Means - demonstrates Data-Parallelism
 4. Barnes-Hut Simulation - demonstrates data structures for Parallel Computing
