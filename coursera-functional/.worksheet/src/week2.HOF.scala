@@ -122,6 +122,13 @@ object HOF {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; d
 	val looseleaf = ("looseleaf", "us");System.out.println("""looseleaf  : (String, String) = """ + $show(looseleaf ));$skip(49); 
 	
 	val websites = List(google, yahoo, looseleaf);System.out.println("""websites  : List[(String, String)] = """ + $show(websites ));$skip(44); val res$19 = 
-	websites.map(x => andrewEmail(x._1)(x._2));System.out.println("""res19: List[String] = """ + $show(res$19))}
+	websites.map(x => andrewEmail(x._1)(x._2));System.out.println("""res19: List[String] = """ + $show(res$19));$skip(55); 
+	//without curry
+	def fun(z: Int, x: Int): Int = z + x;System.out.println("""fun: (z: Int, x: Int)Int""");$skip(34); val res$20 = 
+	List(1,2,3) map (x => fun(5, x));System.out.println("""res20: List[Int] = """ + $show(res$20));$skip(29); val res$21 = 
+	List(1,2,3) map (fun(5, _));System.out.println("""res21: List[Int] = """ + $show(res$21));$skip(55); 
 	
+	//with curry
+	def fun2(z: Int)(x: Int): Int = z + x;System.out.println("""fun2: (z: Int)(x: Int)Int""");$skip(25); val res$22 = 
+	List(1,2,3) map fun2(5);System.out.println("""res22: List[Int] = """ + $show(res$22))}
 }

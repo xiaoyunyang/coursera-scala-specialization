@@ -142,5 +142,12 @@ object HOF {
                                                   //| leaf,us))
 	websites.map(x => andrewEmail(x._1)(x._2))//> res19: List[String] = List(andrew@google.com, andrew@yahoo.com, andrew@loos
                                                   //| eleaf.us)
+	//without curry
+	def fun(z: Int, x: Int): Int = z + x      //> fun: (z: Int, x: Int)Int
+	List(1,2,3) map (x => fun(5, x))          //> res20: List[Int] = List(6, 7, 8)
+	List(1,2,3) map (fun(5, _))               //> res21: List[Int] = List(6, 7, 8)
 	
+	//with curry
+	def fun2(z: Int)(x: Int): Int = z + x     //> fun2: (z: Int)(x: Int)Int
+	List(1,2,3) map fun2(5)                   //> res22: List[Int] = List(6, 7, 8)
 }

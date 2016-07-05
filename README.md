@@ -15,6 +15,17 @@ Instructor: **Martin Ordesky**
 
 [Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week2) -
 * higher order functions - basically functions that has functions as arguments. See [HOF.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week2/HOF.sc) for some examples.
+
+  ```scala
+   //without curry
+   def fun(z: Int, x: Int): Int = z + x
+   List(1,2,3) map (x => fun(5, x))          
+   List(1,2,3) map (fun(5, _))               
+
+   //with curry
+   def fun2(z: Int)(x: Int): Int = z + x  
+   List(1,2,3) map fun2(5)                
+  ```
 * Scala class and datastructure in scala example: [Rational.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week2/Rational.scala), which gets called in [datastructure.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week2/datastruct.sc)
 
 [Week 3](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week3) -
