@@ -63,7 +63,7 @@ Instructor: **Martin Odersky**
 Instructor: **Martin Odersky**
 
 #### Topics
-[Week 1]()
+[Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/week1)
 *  Partial functions
  ```scala
  val f1: PartialFunction[String, String] = { case "ping" => "pong" }
@@ -73,6 +73,8 @@ Instructor: **Martin Odersky**
     if(f1.isDefinedAt(a)) f1(a) else "404"
  )
  ```
+* For-expressions/for-comprehension - shortcuts for doing a flatMap, filter, then a map. Useful when you need to do nested loops.
+* Random Generators
 
 #### Programming Assignments
 1. Bloxorz - demonstrates lazy evaluation
