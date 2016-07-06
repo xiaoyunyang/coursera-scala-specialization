@@ -1,7 +1,7 @@
 # coursera-scala-specialization
 
 ## Functional Programming Principles in Scala
-Instructor: **Martin Ordesky**
+Instructor: **Martin Odersky**
 #### Topics
 [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1) -
 * Evaluation strategy and recursion: [fixedpoint.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1/fixedpoint.sc) demonstrates writing a basic function in scala.
@@ -37,7 +37,16 @@ Instructor: **Martin Ordesky**
 ~ image from http://mbonaci.github.io/scala/
 
 [Week 4](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4) -
-* Subtyping and typing rules for functions: see  [subtyping.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/subtyping.sc)
+* Subtyping and typing rules for functions: see  [subtyping.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/subtyping.sc). Functions are contravariant in their argument types and covariant in their result type. For example, the scala Function1 trait:
+ ```scala
+ /* Variance
+  * the '-' and '+' in front of the type A and R denotes the
+  * variance. '+R' and '-A' means A <: R or 'A is a subtype of R' or * 'R is a supertype of A'
+  */
+ trait Function1[-A, +R] {
+   def apply(x: A): R
+ }
+ ```
 * polymorphism, illustrated in [MyList.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/MyList.scala) and the scala worksheet. [collectionlist.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/collectionlist.sc). As another example, [Boolean2.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/Boolean2.scala) implements a boolean using an abstract class and two companion objects. In the object oriented approach with a trait and class implementations, we can make a singleton for things that only has one implementation. See the Scala implementation of the Peano number in [Nat.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/Nat.scala).
 * Pattern Matching, or a fancy if statements (a generalization of switch from C/Java to class hierarchies) is a good solution for Functional Decomposition. As the purpose of decomposition is to reverse the construction process, pattern matching offers a great way to automate this deconstruction process. The comparison of pattern matching decomposition approach (using scala trait and case class) with the object oriented approach (trait and class implementations) is highlighted in  [Expr.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/Expr.scala), [Expr2.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/Expr2.scala), and [Expr3.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/Expr3.scala).
 
@@ -51,7 +60,19 @@ Instructor: **Martin Ordesky**
 5. Anagrams - demonstrates Collections
 
 ## Functional Program Design in Scala
-Instructor: **Martin Ordesky**
+Instructor: **Martin Odersky**
+
+#### Topics
+[Week 1]()
+*  Partial functions
+ ```scala
+ val f1: PartialFunction[String, String] = { case "ping" => "pong" }
+
+ //result: List(pong, 404, 404)
+ List("ping", "abc", "pong").map(a =>
+    if(f1.isDefinedAt(a)) f1(a) else "404"
+ )
+ ```
 
 #### Programming Assignments
 1. Bloxorz - demonstrates lazy evaluation
