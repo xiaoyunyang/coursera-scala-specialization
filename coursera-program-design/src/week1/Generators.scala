@@ -6,13 +6,13 @@ package week1
 object Generators {
 
   trait Generator[+T] {
-    self =>
+    self => // an alias for "this"
     def generate: T
     def foreach[U](f: T => U) {
       f(generate)
     }
     def map[S](f: T => S): Generator[S] = new Generator[S] {
-      def generate = f(self.generate)
+      def generate = f(self.generate)  // also can be written "Generator.this.generate" or "this.generate"
     }
     def flatMap[S](f: T => Generator[S]): Generator[S] = new Generator[S] {
       def generate = f(self.generate).generate
@@ -28,7 +28,13 @@ object Generators {
   def choose(from: Int, to: Int) = new Generator[Int] {
     def generate = if (from == to) from else scala.util.Random.nextInt(to - from) + from
   }
+  
+  def choose2(lo: Int, hi: Int): Generator[Int] = 
+    for(x <- integers) yield lo + x % (hi - lo) //normalize in the interval between lo and hi using this modulator function
 
+  def oneOf[T](xs: T*): Generator[T] = 
+    for(idx <- choose(0, xs.length)) yield xs(idx)
+  
   def single[T](x: T) = new Generator[T] {
     def generate = x
   }

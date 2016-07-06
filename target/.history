@@ -1,7 +1,0 @@
-List(1,2) flatMap(_+_)
-List(1,2) flatMap(List(_, 3))
-List(1,2) flatMap(a => List(a,a))
-List(1,2).flatMap(a => List(a,a))
-List(1,2,3).flatMap(a => List(a,a+1)
-List(1,2,3).flatMap(a => List(a,a+1))
-List(1,2,3).map(_+1)

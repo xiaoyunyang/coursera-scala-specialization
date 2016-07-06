@@ -8,7 +8,7 @@ Instructor: **Martin Odersky**
  [eval_strategy.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1/eval_strategy.sc) illustrates call-by-vale (imperative, C) versus call-by-name (lazy evaluation).
 
  ```scala
-  def constOne(x: Int, y: => Int) = 1   //y has a type '=> Int' which means y is call-by-name
+  def constOne(x: Int, y: => Int) = 1   //y has a type '=> Int' which means y is passed as a by-name parameter
   constOne(1+2, loop) //reduces to 1
   constOne(loop, 1+2) //infinite cycle
  ```
@@ -51,19 +51,17 @@ Instructor: **Martin Odersky**
 * Pattern Matching, or a fancy if statements (a generalization of switch from C/Java to class hierarchies) is a good solution for Functional Decomposition. As the purpose of decomposition is to reverse the construction process, pattern matching offers a great way to automate this deconstruction process. The comparison of pattern matching decomposition approach (using scala trait and case class) with the object oriented approach (trait and class implementations) is highlighted in  [Expr.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/Expr.scala), [Expr2.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/Expr2.scala), and [Expr3.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/Expr3.scala).
 
 #### Programming Assignments
-1. [Recursive Functions](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/recfun/src/main/scala/recfun/Main.scala) - demonstrates recursion
-2. [Functional Sets](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/funsets/src/main/scala/funsets/FunSets.scala) - demonstrates Higher Order Functions
-3. [Object Oriented Sets](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/objsets/src/main/scala/objsets/TweetSet.scala) - demonstrates data and abstraction
-    * [My Test](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/objsets/src/test/scala/objsets/test.sc) - scala worksheet output
-4. [Huffman Encoding](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/patmat/src/main/scala/patmat/Huffman.scala) - demonstrates Pattern Matching and the scala List Collection
-  * [My Test](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/patmat/src/test/scala/patmat/test.sc) - scala worksheet output
+1. Recursive Functions - demonstrates recursion
+2. Functional Sets - demonstrates Higher Order Functions
+3. Object Oriented Sets - demonstrates data and abstraction
+4. Huffman Encoding - demonstrates Pattern Matching and the scala List Collection
 5. Anagrams - demonstrates Collections
 
 ## Functional Program Design in Scala
 Instructor: **Martin Odersky**
 
 #### Topics
-[Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week1) - 
+[Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week1) -
 *  Partial functions
  ```scala
  val f1: PartialFunction[String, String] = { case "ping" => "pong" }
@@ -74,7 +72,8 @@ Instructor: **Martin Odersky**
  )
  ```
 * For-expressions/for-comprehension - shortcuts for doing a flatMap, filter, then a map. Useful when you need to do nested loops.
-* Random Generators
+* Random Generators and ScalaCheck
+* Monad - functional programming and reactive programming pattern
 
 #### Programming Assignments
 1. Bloxorz - demonstrates lazy evaluation
@@ -92,9 +91,9 @@ Instructors: **Viktor Kuncak and Aleksander Prokopec**
 
 #### Programming Assignments
 1. Box Blur Filter - demonstrates Tasks
-  * [boxBlurKernel](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/scalashop/src/main/scala/scalashop/package.scala) - this method computes the blurred RGBA value of a single pixel of the input image
-  * [HorizontalBoxBlur](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/scalashop/src/main/scala/scalashop/HorizontalBoxBlur.scala) - singleton which implements methods blur and parBlur to blur horizontal pixels of the image in parallel
-  * [VerticalBoxBlur](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/scalashop/src/main/scala/scalashop/VerticalBoxBlur.scala) - singleton which implements methods blur and parBlur to blur vertical pixels of the image in parallel
+  * boxBlurKernel - this method computes the blurred RGBA value of a single pixel of the input image
+  * HorizontalBoxBlur - singleton which implements methods blur and parBlur to blur horizontal pixels of the image in parallel
+  * VerticalBoxBlur - singleton which implements methods blur and parBlur to blur vertical pixels of the image in parallel
   * To run the ScalaShop program, in the console:
     ```
       sbt
