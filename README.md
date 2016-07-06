@@ -63,7 +63,7 @@ Instructor: **Martin Odersky**
 Instructor: **Martin Odersky**
 
 #### Topics
-[Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/week1)
+[Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week1) - 
 *  Partial functions
  ```scala
  val f1: PartialFunction[String, String] = { case "ping" => "pong" }
