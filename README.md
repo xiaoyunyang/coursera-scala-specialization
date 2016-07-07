@@ -78,7 +78,7 @@ Instructor: **Martin Odersky**
 
  //result: List(pong, 404, 404)
  List("ping", "abc", "pong").map(a =>
-    if(f1.isDefinedAt(a)) f1(a) else "404"
+   if(f1.isDefinedAt(a)) f1(a) else "404"
  )
  ```
 * For-expressions/for-comprehension - shortcuts for doing a flatMap, filter, then a map. Useful when you need to do nested loops. See [collections.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/collections.sc) for how to use for expressions to implement filter, map, and flatMap, and vice versa. See [json.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/json.sc) and [query.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/query.sc) for how for expressions are useful for database query and json applications.
@@ -99,9 +99,9 @@ Instructor: **Martin Odersky**
 
  ```scala
  def streamRange(lo: Int, hi: Int): Stream[Int] = {
-   print(lo+" ") //<- a side effect
-   if(lo >= hi) Stream.empty
-   else Stream.cons(lo, streamRange(lo + 1, hi))
+    print(lo+" ") //<- a side effect
+    if(lo >= hi) Stream.empty
+    else Stream.cons(lo, streamRange(lo + 1, hi))
  }
 
  /* The following will not print out "1" because the tail of the
@@ -120,10 +120,10 @@ Instructor: **Martin Odersky**
  ```scala
  //If you run the following program, "xzyz" gets printed as a side effect
  def expr = {
-   val x = { print("x"); 1} //val gets instantiated when you first define it
-   lazy val y = { print("y"); 2 } //lazy val gets instantiated only the first time you use it
-   def z = { print("z"); 3 } //def gets instantiated everytime you use it
-   z + y + x + z + y + x
+    val x = { print("x"); 1} //val gets instantiated when you first define it
+    lazy val y = { print("y"); 2 } //lazy val gets instantiated only the first time you use it
+    def z = { print("z"); 3 } //def gets instantiated everytime you use it
+    z + y + x + z + y + x
  }    
  ```
 * Infinite Sequence - using Streams
@@ -132,6 +132,7 @@ Instructor: **Martin Odersky**
  // The Sieve of Eratosthenes:
  def sieve(s: Stream[Int]): Stream[Int] =
    s.head #:: sieve(s.tail filter (_ % s.head != 0))
+ 
  val primes = sieve(from(2))  //> primes  : Stream[Int] = Stream(2, ?)
  primes.take(10).toList    //> res4: List[Int] = List(2, 3, 5, 7, 11, 13, 17, 19, 23, 29)
  ```
