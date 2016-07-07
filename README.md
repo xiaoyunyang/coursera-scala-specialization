@@ -70,7 +70,7 @@ Instructor: **Martin Odersky**
 
 #### Topics
 [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week1) -
-*  Partial functions
+*  Partial functions - See [partialfuns.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/partialfuns.sc)
  ```scala
  val f1: PartialFunction[String, String] = { case "ping" => "pong" }
 
@@ -79,11 +79,11 @@ Instructor: **Martin Odersky**
     if(f1.isDefinedAt(a)) f1(a) else "404"
  )
  ```
-* For-expressions/for-comprehension - shortcuts for doing a flatMap, filter, then a map. Useful when you need to do nested loops.
-* Random Generators and ScalaCheck
-* Monad - functional programming and reactive programming pattern. Three Monad Laws, Option and Try.
+* For-expressions/for-comprehension - shortcuts for doing a flatMap, filter, then a map. Useful when you need to do nested loops. See [collections.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/collections.sc) for how to use for expressions to implement filter, map, and flatMap, and vice versa. See [json.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/json.sc) and [query.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/query.sc) for how for expressions are useful for database query and json applications.
+* Random Generators and ScalaCheck - [Generator.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/Generators.scala) has various random generators written using ```scala.util.Random```. [generators.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/generators.sc) shows how it's used.
+* Monad - functional programming and reactive programming pattern. Three Monad Laws, Option and Try. See [monad.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/monad.sc).
 
-Week 2 -
+[Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week2) -
 * Streams - Streams are similar to lists, but their tail is evaluated only on demand. There are three ways to create Streams:
  ```scala
   //Notice the tail is a "?". This means the tail is not yet evaluated
@@ -112,8 +112,8 @@ Week 2 -
   */
  streamRange(1, 10).take(3).toList
  ```
-
-* Lazy Evaluation - Laziness means do things as late as possible and never do them twice. The later is achieved with memoization, meaning storing the result of the first evaluation and re-using the stored result instead of recomputing. This optimization is sound, since in a purely functional language, an expression produces the same result each time it is evaluated. In the case of by-name and strict evaluation, everything is recomputed. In general, lazy evaluation is a combination of by-name evaluation and memoization.
+ See [MyStream.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week2/MyStream.scala) for an implementation and [Stream.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week2/stream.sc) for some examples of using Stream.
+* Lazy Evaluation - Laziness means do things as late as possible and never do them twice. The later is achieved with memoization, meaning storing the result of the first evaluation and re-using the stored result instead of recomputing. This optimization is sound, since in a purely functional language, an expression produces the same result each time it is evaluated. In the case of by-name and strict evaluation, everything is recomputed. In general, lazy evaluation is a combination of by-name evaluation and memoization. See [laziness.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week2/laziness.sc) for some examples of lazy evaluations and infinite sequence using Streams. [MyLazyStream.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week2/MyLazyStream.scala) modified [MyStream.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week2/MyStream.scala) to be lazy in the tail.
  ```scala
  //If you run the following program, "xzyz" gets printed as a side effect
  def expr = {
@@ -124,14 +124,14 @@ Week 2 -
  }    
  ```
 * Infinite Sequence - using Streams
-```scala
-// The Sieve of Eratosthenes:
-def sieve(s: Stream[Int]): Stream[Int] =
-		s.head #:: sieve(s.tail filter (_ % s.head != 0))
-val primes = sieve(from(2))  //> primes  : Stream[Int] = Stream(2, ?)
-primes.take(10).toList    //> res4: List[Int] = List(2, 3, 5, 7, 11, 13, 17, 19, 23, 29)
-```
-* The water pouring problem - Program Design. Two optimizations to avoid re-computation: (1) keep a list of explored paths, pass that into the next Path calculation (2) pass the current endState to the constructor of the next Path so the next Path won't have to recompute the last Path's endState all over again using the history.
+ ```scala
+ // The Sieve of Eratosthenes:
+ def sieve(s: Stream[Int]): Stream[Int] =
+   s.head #:: sieve(s.tail filter (_ % s.head != 0))
+ val primes = sieve(from(2))  //> primes  : Stream[Int] = Stream(2, ?)
+ primes.take(10).toList    //> res4: List[Int] = List(2, 3, 5, 7, 11, 13, 17, 19, 23, 29)
+ ```
+* The water pouring problem - Program Design. Two optimizations to avoid re-computation: (1) keep a list of explored paths, pass that into the next Path calculation (2) pass the current endState to the constructor of the next Path so the next Path won't have to recompute the last Path's endState all over again using the history. See [Pouring.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week2/Pouring.scala) and [pouringTest.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week2/pouringTest.sc) for implementation and result.
 
 #### Programming Assignments
 1. Bloxorz - demonstrates lazy evaluation
