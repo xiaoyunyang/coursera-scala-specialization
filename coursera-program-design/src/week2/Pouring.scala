@@ -26,6 +26,7 @@ class Pouring(capacity: Vector[Int]) {
       paths #:: fromInefficient(more)
     }
   }
+  //this is a depth first search approach?
   def from(paths: Set[PathOptimized], explored: Set[State]): Stream[Set[PathOptimized]] = {
     if(paths.isEmpty) Stream.empty
     else {
@@ -77,8 +78,7 @@ class Pouring(capacity: Vector[Int]) {
     }
     
   }
-  
-  
+   
   /** Paths **/
   class Path(history: List[Move]) {
     //another optimization we can do is the endState gets recomputed every time. 
@@ -101,9 +101,4 @@ class Pouring(capacity: Vector[Int]) {
     override def toString = (history.reverse mkString " ") + "--> " + endState
   }
   
-
-
-  
-
-
 }

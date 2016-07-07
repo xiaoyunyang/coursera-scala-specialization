@@ -3,6 +3,7 @@ package parallel
 
 object computation {
 	
+	
 	def parallel[A, B](taskA: => A, taskB: => B): (A,B) = (taskA, taskB)
                                                   //> parallel: [A, B](taskA: => A, taskB: => B)(A, B)
  	//val myTask = new MyTask

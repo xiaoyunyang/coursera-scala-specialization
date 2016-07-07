@@ -2,6 +2,9 @@
 
 ## Functional Programming Principles in Scala
 Instructor: **Martin Odersky**
+* [Scala Cheatsheet](https://github.com/lampepfl/progfun-wiki/blob/gh-pages/CheatSheet.md)
+* Alternatively, [Functional Programming in Scala](https://github.com/fpinscala/fpinscala) by Paul Chiusano and Rúnar Bjarnason is a great alternative/complement to taking this course.
+
 #### Topics
 [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1) -
 * Evaluation strategy and recursion: [fixedpoint.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1/fixedpoint.sc) demonstrates writing a basic function in scala.
@@ -67,8 +70,18 @@ Instructor: **Martin Odersky**
 4. Huffman Encoding - demonstrates Pattern Matching and the scala List Collection
 5. Anagrams - demonstrates Collections
 
+#### Solutions links
+1. [ailyenko](https://github.com/ailyenko/Functional-Scala/tree/master/src/main/scala)
+2. [frankh](https://github.com/frankh/coursera-scala)
+3. [tonyskn](https://github.com/tonyskn/coursera-scala)
+4. [drolando](https://github.com/drolando/scala-coursera)
+5. [coderwall](https://coderwall.com/p/_akojq/scala-week-3)
+
 ## Functional Program Design in Scala
 Instructor: **Martin Odersky**
+* [Reactive Cheatsheet](https://github.com/sjuvekar/reactive-programming-scala/blob/master/ReactiveCheatSheet.md)
+* [Reactive Extension for JavaScript](https://github.com/Reactive-Extensions/RxJS)
+* [Reactive Programming Intro](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
 
 #### Topics
 [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week1) -
@@ -81,12 +94,12 @@ Instructor: **Martin Odersky**
    if(f1.isDefinedAt(a)) f1(a) else "404"
  )
  ```
-* For-expressions/for-comprehension - shortcuts for doing a flatMap, filter, then a map. Useful when you need to do nested loops. See [collections.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/collections.sc) for how to use for expressions to implement filter, map, and flatMap, and vice versa. See [json.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/json.sc) and [query.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/query.sc) for how for expressions are useful for database query and json applications.
+* For-expressions/for-comprehension - shortcuts for doing a flatMap, filter, then a map. Useful when you need to do nested loops. See [collections.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/collections.sc) for how to use for expressions to implement filter, map, and flatMap, and vice versa. See [json.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/json.sc) and [query.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/query.sc) for how for expressions are useful for database query and json applications. [Sets](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Set) are typically used for database query or keeping track of a set of explored in graph search applications because Sets don't contain duplicates.
 * Random Generators and ScalaCheck - [Generator.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/Generators.scala) has various random generators written using ```scala.util.Random```. [generators.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/generators.sc) shows how it's used.
 * Monad - functional programming and reactive programming pattern. Three Monad Laws, Option and Try. See [monad.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/monad.sc).
 
 [Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week2) -
-* Streams - Streams are similar to lists, but their tail is evaluated only on demand. There are three ways to create Streams:
+* [Stream](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Stream) - Streams are similar to [Lists](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.List), but their tail is evaluated only on demand. There are three ways to create Streams:
  ```scala
   //Notice the tail is a "?". This means the tail is not yet evaluated
   Stream(1,2,3) //res: Stream(1, ?)
@@ -132,19 +145,20 @@ Instructor: **Martin Odersky**
  // The Sieve of Eratosthenes:
  def sieve(s: Stream[Int]): Stream[Int] =
    s.head #:: sieve(s.tail filter (_ % s.head != 0))
- 
+
  val primes = sieve(from(2))  //> primes  : Stream[Int] = Stream(2, ?)
  primes.take(10).toList    //> res4: List[Int] = List(2, 3, 5, 7, 11, 13, 17, 19, 23, 29)
  ```
 * The water pouring problem - Program Design. Two optimizations to avoid re-computation: (1) keep a list of explored paths, pass that into the next Path calculation (2) pass the current endState to the constructor of the next Path so the next Path won't have to recompute the last Path's endState all over again using the history. See [Pouring.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week2/Pouring.scala) and [pouringTest.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week2/pouringTest.sc) for implementation and result.
 
 #### Programming Assignments
-1. Bloxorz - demonstrates lazy evaluation
+1. Bloxorz - get practice on lazy evaluation, for-expression, Stream, and DFS/BFS graph search algorithms. You are solving a
 2. Quickcheck - demonstrates functions and state
 3. Calculator - demonstrates timely effects
 
 ## Parallel Programming
 Instructors: **Viktor Kuncak and Aleksander Prokopec**
+* [Code from Lectures]([https://github.com/axel22/parprog-snippets)
 
 #### Topics
 [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-parallel/src/week1) -

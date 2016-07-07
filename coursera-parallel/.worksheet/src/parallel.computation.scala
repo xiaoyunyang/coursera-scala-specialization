@@ -1,7 +1,8 @@
 package parallel
 
 
-object computation {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(111); 
+object computation {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(113); 
+	
 	
 	def parallel[A, B](taskA: => A, taskB: => B): (A,B) = (taskA, taskB);System.out.println("""parallel: [A, B](taskA: => A, taskB: => B)(A, B)""");$skip(194); 
  	//val myTask = new MyTask
