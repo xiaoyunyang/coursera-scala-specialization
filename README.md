@@ -30,6 +30,7 @@ Instructor: **Martin Odersky**
 
 [Week 3](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week3) -
 * To run a Scala Application, just add a main function:
+
   ```scala
   object ScalaProgram {
     def main(args: Array[String]) = {
