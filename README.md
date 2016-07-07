@@ -125,6 +125,7 @@ Instructor: **Martin Odersky**
  }    
  ```
 * Infinite Sequence - using Streams
+
  ```scala
  // The Sieve of Eratosthenes:
  def sieve(s: Stream[Int]): Stream[Int] =
