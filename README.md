@@ -46,6 +46,7 @@ Instructor: **Martin Odersky**
 
 [Week 4](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4) -
 * Subtyping and typing rules for functions: see  [subtyping.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/subtyping.sc). Functions are contravariant in their argument types and covariant in their result type. For example, the scala Function1 trait:
+
  ```scala
  /* Variance
   * the '-' and '+' in front of the type A and R denotes the
