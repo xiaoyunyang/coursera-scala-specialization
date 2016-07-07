@@ -41,7 +41,7 @@ object Nil2 extends MyList[Nothing] { //List is a bottom type (i.e., subtype of 
 }
 
 //Companion object - implements apply
-//Any class with an apply can be called, like a function, e.g. instead of 'new Cons(1,2)', we can now do List(1,2)
+//Any class with an apply can be called, like a function, e.g. instead of 'new Cons(1,2)', we can now do 'List(1,2)'
 object MyList {
   //List(1,2) = List.apply(1,2)
   def apply[T](x1: T, x2: T, x3: T, x4: T): MyList[T] = new Cons(x1, apply(x2, x3, x4))

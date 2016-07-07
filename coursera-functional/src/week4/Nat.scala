@@ -18,6 +18,7 @@ object Zero extends Nat {
     if(that.isZero) this
     else throw new Error("Cannot substract to get negative")
   }
+  override def toString = "0"
 }
 //NonZero Natural Numbers
 class NonZero(n: Nat) extends Nat {
@@ -28,5 +29,21 @@ class NonZero(n: Nat) extends Nat {
   def - (that: Nat): Nat = {
     if(that.isZero) this
     else n - that.predecessor //this is the same as (this - that) because n = this.predessor
-  } 
+  }
+    override def toString = {
+    def count(n: Nat, ct: Int): Int = n.isZero match {
+      case true => ct
+      case false => count(n.predecessor, ct+1)
+    }
+    ""+count(this, 0)
+  }
+}
+
+object NonZero {
+  def apply[T](x: Nat): Nat = new NonZero(x)
+  
+  def main(args: Array[String]) = {
+    println(Zero)
+    println(NonZero(NonZero(Zero)))
+  }
 }
