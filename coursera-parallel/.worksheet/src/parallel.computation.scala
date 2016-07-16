@@ -27,10 +27,10 @@ object computation {;import org.scalaide.worksheet.runtime.library.WorksheetSupp
   	val (sum1, sum2) = (sumSegment(a, p, 0, m), sumSegment(a, p, m, a.length))
   	
   	raiseToPower(sum1+sum2, 1/p)
-  };System.out.println("""pNormTwoPart: (a: Array[Int], p: Double)Int""");$skip(27); 
+  };System.out.println("""pNormTwoPart: (a: Array[Int], p: Double)Int""");$skip(26); 
   
   
-  val threshold = 0;System.out.println("""threshold  : Int = """ + $show(threshold ));$skip(251); ;
+  val threshold = 0;System.out.println("""threshold  : Int = """ + $show(threshold ));$skip(251); 
   def segmentRec(a: Array[Int], p: Double, s: Int, t: Int): Int = {
   	if(t-s < threshold)
   		sumSegment(a,p,s,t)
