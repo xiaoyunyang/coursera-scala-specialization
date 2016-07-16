@@ -125,28 +125,29 @@ Instructor: **Martin Odersky**
 * Natural induction and structural induction can be performed on functional programs because functional programming allows for referential transparency. Concat on list can be proved to be associative using structural induction. The fold-unfold method for equational proof of functional programs.
 
 [Week 6](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week6) -
+
 * Other Collections of Sequence. List, Vector, and Range are implementation of  Sequence, i.e., Sequence is a base class of List and Vector. Array and String are sequence like structures and "subclasses" of Sequence, but both came from the Java universe. Set and Map all have the base class Iterable.
   * List - O(N). Good for operations with access patterns that requires you to access head and tail sequentially. For Cons, you  use ```::```. For concat, you use ```++```. The fundamental operation for List is head and tail.
   * Vector - O(Log_32(N)). Good for bulk operations, such as map or a fold or filter (highly parallelizable operations). You can do it in chunks of 32. For Cons, you use ```+:``` to add element to the left of the Vector, or use ```:+``` to add element to the right of the Vector. Note that ```:``` always points to the sequence. For Vectors, the fundamental operation is index.
-  * 
-   ```scala
-   0 +: nums //Vector(0, 1, 2, 3, -88)
-   nums :+ 0 //Vector(1, 2, 3, -88, 0)
 
-   def scalarProduct(xs: Vector[Double], ys: Vector[Double]): Double = {
-		 (xs zip ys).map{case (x,y) => x*y }.sum
-	 }
-   ```
+     ```scala
+        0 +: nums //Vector(0, 1, 2, 3, -88)
+        nums :+ 0 //Vector(1, 2, 3, -88, 0)
+
+        def scalarProduct(xs: Vector[Double], ys: Vector[Double]): Double = {
+		   (xs zip ys).map{case (x,y) => x*y }.sum
+	     }
+     ````    
 
  * String - a sequence from the java universe [java.lang.String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-   
-   ```scala
-   val s = "Hello World"
-   s filter (c => c.isUpper) //HW
-   s exists (c => c.isUpper)  //true
-   s forall (c => c.isUpper)  //false
-   s flatMap (c => List('.', c)) //.H.e.l.l.o. .W.o.r.l.d
-   ```
+
+     ```scala
+    val s = "Hello World"
+    s filter (c => c.isUpper) //HW
+    s exists (c => c.isUpper)  //true
+    s forall (c => c.isUpper)  //false
+    s flatMap (c => List('.', c)) //.H.e.l.l.o. .W.o.r.l.d
+     ```
 
  * Range
 
