@@ -131,12 +131,12 @@ Instructor: **Martin Odersky**
   * Vector - O(Log_32(N)). Good for bulk operations, such as map or a fold or filter (highly parallelizable operations). You can do it in chunks of 32. For Cons, you use ```+:``` to add element to the left of the Vector, or use ```:+``` to add element to the right of the Vector. Note that ```:``` always points to the sequence. For Vectors, the fundamental operation is index.
 
      ```scala
-        0 +: nums //Vector(0, 1, 2, 3, -88)
-        nums :+ 0 //Vector(1, 2, 3, -88, 0)
+     0 +: nums //Vector(0, 1, 2, 3, -88)
+     nums :+ 0 //Vector(1, 2, 3, -88, 0)
 
-        def scalarProduct(xs: Vector[Double], ys: Vector[Double]): Double = {
-		   (xs zip ys).map{case (x,y) => x*y }.sum
-	     }
+     def scalarProduct(xs: Vector[Double], ys: Vector[Double]): Double = {
+	      (xs zip ys).map{case (x,y) => x*y }.sum
+	  }
      ````    
 
  * String - a sequence from the java universe [java.lang.String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
