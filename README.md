@@ -128,7 +128,7 @@ Instructor: **Martin Odersky**
 * Other Collections of Sequence. List, Vector, and Range are implementation of  Sequence, i.e., Sequence is a base class of List and Vector. Array and String are sequence like structures and "subclasses" of Sequence, but both came from the Java universe. Set and Map all have the base class Iterable.
   * List - O(N). Good for operations with access patterns that requires you to access head and tail sequentially. For Cons, you  use ```::```. For concat, you use ```++```. The fundamental operation for List is head and tail.
   * Vector - O(Log_32(N)). Good for bulk operations, such as map or a fold or filter (highly parallelizable operations). You can do it in chunks of 32. For Cons, you use ```+:``` to add element to the left of the Vector, or use ```:+``` to add element to the right of the Vector. Note that ```:``` always points to the sequence. For Vectors, the fundamental operation is index.
-
+  * 
    ```scala
    0 +: nums //Vector(0, 1, 2, 3, -88)
    nums :+ 0 //Vector(1, 2, 3, -88, 0)
@@ -139,7 +139,7 @@ Instructor: **Martin Odersky**
    ```
 
  * String - a sequence from the java universe [java.lang.String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-
+   
    ```scala
    val s = "Hello World"
    s filter (c => c.isUpper) //HW
@@ -148,23 +148,23 @@ Instructor: **Martin Odersky**
    s flatMap (c => List('.', c)) //.H.e.l.l.o. .W.o.r.l.d
    ```
 
-  * Range
+ * Range
 
-   ```scala
-   val r: Range = 1 until 5 //Range(1, 2, 3, 4)
-   val t: Range = 1 to 5 //Range(1, 2, 3, 4, 5)
-   1 to 10 by 3 //Range(1, 4, 7, 10)
-   6 to 1 by -2 //Range(6, 4, 2)
+    ```scala
+    val r: Range = 1 until 5 //Range(1, 2, 3, 4)
+    val t: Range = 1 to 5 //Range(1, 2, 3, 4, 5)
+    1 to 10 by 3 //Range(1, 4, 7, 10)
+    6 to 1 by -2 //Range(6, 4, 2)
 
-   def rangePairs(m: Int, n: Int) = {
+    def rangePairs(m: Int, n: Int) = {
 		 (1 to m) flatMap (x => (1 to n) map (y => (x, y)))
 	 }    
 	 rangePairs(3,2) //Vector((1,1), (1,2), (2,1), (2,2), (3,1), (3,2))
 
-   def isPrime(n: Int): Boolean = {
+    def isPrime(n: Int): Boolean = {
 		(2 until n) forall (d => n % d != 0)
-	}
-   ```
+	 }
+    ```
 
 * Combinatorial Search and For-Expressions - for expressions handle nested sequences in combinatorial problems. Higher order functions on sequences often replaces loops. For nested loops, we can use for expressions. The general form is ```for ( s ) yield e ``` where s is a sequence of generators and filters, and e is an expression whose value is returned by an iterator. A generator is in the form ```p <- e``` instead of ( s ), braces { s } can also be used, and then the sequence of generators and filters can be written on multiple lines without requiring semicolons.
 
@@ -233,12 +233,13 @@ Instructor: **Martin Odersky**
 #### Topics
 [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week1) -
 *  Partial functions - See [partialfuns.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/partialfuns.sc)
+
  ```scala
  val f1: PartialFunction[String, String] = { case "ping" => "pong" }
 
  //result: List(pong, 404, 404)
  List("ping", "abc", "pong").map(a =>
-    if(f1.isDefinedAt(a)) f1(a) else "404"
+   if(f1.isDefinedAt(a)) f1(a) else "404"
  )
  ```
 * For-expressions/for-comprehension - shortcuts for doing a flatMap, filter, then a map. Useful when you need to do nested loops. See [collections.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/collections.sc) for how to use for expressions to implement filter, map, and flatMap, and vice versa. See [json.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/json.sc) and [query.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/query.sc) for how for expressions are useful for database query and json applications. [Sets](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Set) are typically used for database query or keeping track of a set of explored in graph search applications because Sets don't contain duplicates.
@@ -247,6 +248,7 @@ Instructor: **Martin Odersky**
 
 [Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week2) -
 * [Stream](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Stream) - Streams are similar to [Lists](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.List), but their tail is evaluated only on demand. There are three ways to create Streams:
+
  ```scala
   //Notice the tail is a "?". This means the tail is not yet evaluated
   Stream(1,2,3) //res: Stream(1, ?)
