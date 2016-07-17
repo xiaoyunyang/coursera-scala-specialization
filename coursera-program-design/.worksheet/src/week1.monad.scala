@@ -1,7 +1,7 @@
 package week1
 
-
-object monad {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(74); 
+/** Option and Try */
+object monad {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(95); 
   println("Welcome to the Scala worksheet");$skip(82); val res$0 = 
   //map can be written as a flatMap and a unit: List()
   List(1,2) map (x => x+1);System.out.println("""res0: List[Int] = """ + $show(res$0));$skip(37); val res$1 = 

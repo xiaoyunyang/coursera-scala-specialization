@@ -9,7 +9,7 @@ Instructor: **Martin Odersky**
 * Get practice with Scala by solving the [99 Scala problems](http://aperiodic.net/phil/scala/s-99/) and the problems of [Project Euler](https://projecteuler.net/archives) and [Scala Exercises](https://www.scala-exercises.org/).
 
 #### Topics
-[Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1) -
+##### [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1) -
 * Evaluation strategy and recursion: [fixedpoint.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1/fixedpoint.sc) demonstrates writing a basic function in scala.
  [eval_strategy.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1/eval_strategy.sc) illustrates call-by-vale (imperative, C) versus call-by-name (not to be confused with lazy evaluation).
 
@@ -19,7 +19,7 @@ Instructor: **Martin Odersky**
   constOne(loop, 1+2) //infinite cycle
  ```
 
-[Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week2) -
+##### [Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week2) -
 * higher order functions - basically functions that has functions as arguments. See [HOF.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week2/HOF.sc) for some examples.
 * Currying and Partial applications - currying is the process of transforming a function that takes multiple arguments into a function that takes a single argument and returns another function that returns another function that takes remaining arguments. This way, we can transform any function of multiple arguments into chain of multiple functions with single argument (e.g., a partially applied function). Why would we want to break up a big complicated function that takes a dozen arguments into many smaller functions that take a few arguments each?
 
@@ -36,7 +36,7 @@ Instructor: **Martin Odersky**
 
 * Scala class and datastructure in scala example: [Rational.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week2/Rational.scala), which gets called in [datastructure.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week2/datastruct.sc)
 
-[Week 3](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week3) -
+##### [Week 3](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week3) -
 * To run a Scala Application, just add a main function:
 
   ```scala
@@ -62,7 +62,7 @@ Instructor: **Martin Odersky**
 
 ~ image from http://mbonaci.github.io/scala/
 
-[Week 4](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4) -
+##### [Week 4](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4) -
 * Subtyping and typing rules for functions: see  [subtyping.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/subtyping.sc). Functions are contravariant in their argument types and covariant in their result type. For example, the scala Function1 trait:
 
  ```scala
@@ -78,7 +78,7 @@ Instructor: **Martin Odersky**
 
 * Pattern Matching, or a fancy if statements (a generalization of switch from C/Java to class hierarchies) is a good solution for Functional Decomposition. As the purpose of decomposition is to reverse the construction process, pattern matching offers a great way to automate this deconstruction process. The comparison of pattern matching decomposition approach (using scala trait and case class) with the object oriented approach (trait and class implementations) is highlighted in  [Expr.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/Expr.scala), [Expr2.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/Expr2.scala), and [Expr3.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/Expr3.scala).
 
-[Week 5](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week5) -
+##### [Week 5](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week5) -
 * List operations - functions on list processing
 * Pairs and Tuples - can help with program composition and decomposition. Pair is a 2-tuple. Pair can only take two things. Tuples can take as long of a sequence as you want.
 
@@ -124,8 +124,7 @@ Instructor: **Martin Odersky**
 
 * Natural induction and structural induction can be performed on functional programs because functional programming allows for referential transparency. Concat on list can be proved to be associative using structural induction. The fold-unfold method for equational proof of functional programs.
 
-[Week 6](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week6) -
-
+##### [Week 6](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week6) -
 * Other Collections of Sequence. List, Vector, and Range are implementation of  Sequence, i.e., Sequence is a base class of List and Vector. Array and String are sequence like structures and "subclasses" of Sequence, but both came from the Java universe. Set and Map all have the base class Iterable.
   * List - O(N). Good for operations with access patterns that requires you to access head and tail sequentially. For Cons, you  use ```::```. For concat, you use ```++```. The fundamental operation for List is head and tail.
   * Vector - O(Log_32(N)). Good for bulk operations, such as map or a fold or filter (highly parallelizable operations). You can do it in chunks of 32. For Cons, you use ```+:``` to add element to the left of the Vector, or use ```:+``` to add element to the right of the Vector. Note that ```:``` always points to the sequence. For Vectors, the fundamental operation is index.
@@ -135,7 +134,7 @@ Instructor: **Martin Odersky**
      nums :+ 0 //Vector(1, 2, 3, -88, 0)
 
      def scalarProduct(xs: Vector[Double], ys: Vector[Double]): Double = {
-	      (xs zip ys).map{case (x,y) => x*y }.sum
+	    (xs zip ys).map{case (x,y) => x*y }.sum
 	  }
      ````    
 
@@ -176,7 +175,7 @@ Instructor: **Martin Odersky**
  ```
 
 * Combinatorial Search examples - combine Sets and for expressions in a classical combinatorial search problem. Sets are unordered, do not have duplicate elements, and the fundamental operation for Set is contains. Checkout nqueens for an example of solution generation using Vector functions (```forall```, ```fill```, ```updated```), and for expressions.
-* Map and Option
+* Map and Option - Maps provide efficient lookup of all the values mapped to a certain key. Any collection of pairs can be transformed into a `Map` using the ```toMap``` method. Similarly, any ```Map``` can be transformed into a ```List``` of pairs using the ```toList``` method.
 
  ```scala
  val romanNumerals = Map('I' -> 1, 'V' -> 5, 'X' -> 10)
@@ -199,7 +198,7 @@ Instructor: **Martin Odersky**
  	showCapitalWithOption("Andorra")          //missing data
  ```
 
- groupBy and orderBy operations in SQL queries have analogues in Scala, namely sortWith and sorted.
+ groupBy and orderBy operations in SQL queries have analogues in Scala, namely sortWith and sorted. The ```groupBy``` method takes a function mapping an element of a collection to a key of some other type, and produces a `Map` of keys and collections of elements which mapped to the same key.
 
  ```scala
  val fruit = List("apple", "pear", "orange", "pineapple")
@@ -226,13 +225,14 @@ Instructor: **Martin Odersky**
 5. [coderwall](https://coderwall.com/p/_akojq/scala-week-3)
 
 ## Functional Program Design in Scala
-Instructor: **Martin Odersky**
+#####Instructor: **Martin Odersky**
 * [Reactive Cheatsheet](https://github.com/sjuvekar/reactive-programming-scala/blob/master/ReactiveCheatSheet.md)
 * [Reactive Extension for JavaScript](https://github.com/Reactive-Extensions/RxJS)
 * [Reactive Programming Intro](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
+* [Functional Reactive Programming Study Guide](https://github.com/dnvriend/reactive-programming)
 
 #### Topics
-[Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week1) -
+##### [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week1) -
 *  Partial functions - See [partialfuns.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/partialfuns.sc)
 
  ```scala
@@ -247,7 +247,7 @@ Instructor: **Martin Odersky**
 * Random Generators and ScalaCheck - [Generator.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/Generators.scala) has various random generators written using ```scala.util.Random```. [generators.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/generators.sc) shows how it's used.
 * Monad - functional programming and reactive programming pattern. Three Monad Laws, Option and Try. See [monad.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week1/monad.sc). Some good articles on monads: [Demystifying the Monad in Scala](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534#.ebd50ld0z) and [Functors and Applicative](https://medium.com/@sinisalouc/functors-and-applicatives-b9af535b1440#.lx20785nm)
 
-[Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week2) -
+##### [Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week2) -
 * [Stream](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Stream) - Streams are similar to [Lists](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.List), but their tail is evaluated only on demand. There are three ways to create Streams:
 
  ```scala
@@ -301,22 +301,124 @@ Instructor: **Martin Odersky**
  ```
 * The water pouring problem - Program Design. Two optimizations to avoid re-computation: (1) keep a list of explored paths, pass that into the next Path calculation (2) pass the current endState to the constructor of the next Path so the next Path won't have to recompute the last Path's endState all over again using the history. See [Pouring.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week2/Pouring.scala) and [pouringTest.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week2/pouringTest.sc) for implementation and result.
 
+##### [Week 3](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week3) -
+* Functions and State - in a reactive program, there will be mutable states. We will broaden our definitions of functions to work with states. We have worked with pure functions have no side effects, but working with mutable states has repurcussions. The concept of time is important for mutable states. In general, objects with mutable states are identifiable through the following two observations:
+	* when we perform the same operation twice below, we get back different answers. This is because the history of the operation matters.
+	* Whenever you see ```var```, it should be a red flag that you are probably dealing with mutable states. Every form of mutable state is constructed from variables. A ```var``` is like a ```val``` but a ```var``` can be changed later on by assignment.
+* Identity and Change - What it means to be equivalent - x and y are operational equivalence if no possible test can distinguish between them.
+* Loops - While and Repeat can be translated into higher order functions Do-while loops can be implemented by making WHILE a function inside the DO class. For-loops can be implemented using for-expressions and foreach call on Ranges (1 until n).
+* Discrete Event Simulator
+	* An implementation of it is the digital circuit simulator in which each type of gate observes whether any input changes and if so, updates the output signal after some delay (performs action after delay).
+	* Discrete Event Simlator API has performs actions specified by the user at a given moment. An ```action``` is a function that doesn't take any parameters and returns Unit.
+		
+		```scala 
+		type Action = () => Unit
+		```
+		
+		Every instance of the Simulation trait keeps an agenda of actions to perform. The agenda is a List of simulated events. Each event consists of an action and the time when it must be produced. 
+	* In the end, it's a tradeoff when you use mutable states. On one hand, assignments allow us to formulate certain programs in an elegant way. On the other hand, you lose referential transparency (RT) and the substitution model (tools for you to reason about the program).
+
+##### [Week 4](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week4) -
+* Imperative Event Handling (used a lot for User Interface): The Observer Pattern (e.g., publish/subscribe and model/view/controller) - This pattern has a few shortcomings.
+	* The Good: 
+		* Decouples views from state and allows us to have varying number of views of a given state. And it's simple to set up.
+	* The Bad: 
+		1. Forces imperative style (because returns Unit as result).
+		2. Many moving parts that need to be co-ordinated. Every subscriber has to announce itself to the publisher with subscribe and the publisher has to handle these things in the datastructure.
+		3. Things will get more complicated when you add concurrency, e.g., when you have a view that observes two different models that get updated concurrently, then the two models can call the handler method of the view, you get race conditions.
+		4. Another thing is views are still tightly bound to one state. Event handling can be very buggy.
+* Functional Reactive Programming (FRP) - reactive programming is about reacting to sequences of events that happen in time. The event sequence is aggregated into a signal. Instad of mutating states to propagate updates, we create new signals in terms of existing ones.
+	* Some examples are: [Flapjax](http://www.flapjax-lang.org/), [Elm](http://elm-lang.org/) (javascript), [Bacon.js](https://baconjs.github.io/) (javescript), [React4J](https://bitbucket.org/yann_caron/react4j/wiki/Home) (Java). Rx is a event streaming dataflow programming system, but not really FRP. ```Scala.reactive``` handles FRP.
+	* Signal can be a variable. The crucial difference between a variable signal and mutable variables is that we can define relationship between two signals and when one changes, the other automatically changes. There are no such mechanisms for mutable variables and they must be updated manually.
+		
+	```scala
+	//assign constant value to a signal
+	val sig = Signal(3) 
+	
+	//There are two ways to update a Variable signal
+	val sig = Var(3)
+	sig.update(5)
+	sig() = 5
+	
+	/** Key difference between mutable variables and signal variables */
+	//mutable varialbes
+	var a = 2 
+	var b = 2 * a
+	a = a + 1
+	b		// still 4. Not automatically updated to 6
+	
+	//signal variables
+	val aSig: Var[Int] = Var(2) // signal variable of 2
+	val bSig: Var[Int] = Var(2 * aSig()) //signal variable of 2 * the value of aSig 
+	bSig()  // to "dereference" the bSig, we get 4
+	aSig.update(3)
+	bSig()		// the value of bSig at current time is automatically updated to 6!
+	
+	//Constant vs. variable signals
+	val x = Var(1)
+	val y = Signal(x() * 2)  // when using Signal(), definition cannot be changed
+	x()		// 1                         
+	y()		// 2
+	
+	val x1 = x() + 1
+	x() = x1
+	x()  	// 2
+	y()		// 4		
+	
+	/** cyclic signal definition. 
+	  * s() = s() + 1 makes no sense because you 
+	  * are trying to define a signal s to be at all points in time larger than itself.
+	  */
+	  
+	//ERROR
+	val x = Var(1)
+	x() = x() + 1  // cyclic signal definition
+	
+	//CORRECT
+	val x = Var(1)
+	val x1 = x() + 1
+	x() = x1 // updates x() to be Var(2)
+	
+	
+	/** Caveats with Signals 
+	  * moral of the story is don't use var and use s.update(v) instead of s() = v to 
+	  * minimize chance of mistake.
+	  */
+	val num = Var(1)
+	val twice = Signal(num() * 2)
+	num() = 2
+	twice()		// 4
+	
+	var num2 = Var(1)
+	val twice2 = Signal(num2() * 2)
+	num2 = Var(2)
+	twice2()		// 2	
+	```
+* Implementation of ```Signal``` and ```Var```, which is a subclass of ```Signal``` with an update method.
+
+
 #### Programming Assignments
 1. Bloxorz - get practice on lazy evaluation, for-expression, Stream, and DFS/BFS graph search algorithms. You are solving a
 2. Quickcheck - demonstrates functions and state
 3. Calculator - demonstrates timely effects
 
+
+#### Solutions links
+1. [ncolomer](https://github.com/ncolomer/coursera/tree/master/reactive)
+2. [ehsanmok](https://github.com/ehsanmok/Scala-Parallel-Programming)
+3. [Quickcheck Gist](https://gist.github.com/wh5a/7394082)
+
 ## Parallel Programming
-Instructors: **Viktor Kuncak and Aleksander Prokopec**
+##### Instructors: Viktor Kuncak and Aleksander Prokopec
 * [Code from Lectures](https://github.com/axel22/parprog-snippets)
 
 #### Topics
-[Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-parallel/src/week1) -
+##### [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-parallel/src/week1) -
 * Deadlock
 * Parallelism on the JVM
 * First Class Tasks
 
-[Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-parallel/src/week2)
+##### [Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-parallel/src/week2) -
 * Parallel map - implement using a Tree:
 
 
@@ -388,6 +490,6 @@ Instructors: **Viktor Kuncak and Aleksander Prokopec**
 3. K-Means - demonstrates Data-Parallelism
 4. Barnes-Hut Simulation - demonstrates data structures for Parallel Computing
 
-Solution links
+#### Solutions links
 1. [hugcruz](https://github.com/hugcruz/parprog1)
 2. [ehsanmok](https://github.com/ehsanmok/Scala-Parallel-Programming)

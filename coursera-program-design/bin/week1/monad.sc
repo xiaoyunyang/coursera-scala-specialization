@@ -1,6 +1,6 @@
 package week1
 
-
+/** Option and Try */
 object monad {
   println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
   //map can be written as a flatMap and a unit: List()
