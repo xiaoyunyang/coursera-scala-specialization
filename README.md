@@ -1,12 +1,13 @@
 # coursera-scala-specialization
 
 ## Functional Programming Principles in Scala
-Instructor: **Martin Odersky**
+#####Instructor: **Martin Odersky**
 * [Scala Cheatsheet](https://github.com/lampepfl/progfun-wiki/blob/gh-pages/CheatSheet.md)
 * [Twitter Scala School](https://twitter.github.io/scala_school/collections.html)
 * [Scala website](http://www.scala-lang.org/)
 * Alternatively, [Functional Programming in Scala](https://github.com/fpinscala/fpinscala) by Paul Chiusano and Rúnar Bjarnason is a great alternative/complement to taking this course.
 * Get practice with Scala by solving the [99 Scala problems](http://aperiodic.net/phil/scala/s-99/) and the problems of [Project Euler](https://projecteuler.net/archives) and [Scala Exercises](https://www.scala-exercises.org/).
+* Notes and Cribsheet from [iirvine](https://github.com/iirvine/functional-programming-in-scala/tree/master/notes)
 
 #### Topics
 ##### [Week 1](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week1) -
@@ -60,7 +61,6 @@ Instructor: **Martin Odersky**
 
 ![class hierarchy](https://github.com/mbonaci/scala/blob/master/resources/Scala-class-hierarchy.gif?raw=true)
 
-~ image from http://mbonaci.github.io/scala/
 
 ##### [Week 4](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4) -
 * Subtyping and typing rules for functions: see  [subtyping.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week4/subtyping.sc). Functions are contravariant in their argument types and covariant in their result type. For example, the scala Function1 trait:
@@ -94,37 +94,43 @@ Instructor: **Martin Odersky**
 
 * Implicit Parameters and ```scala.math.Ordering```
 * Higher Order List Functions (HOFs)
-  * HOFs that take unary operators: filter, filterNot and Partition (combination filter and filterNot. takeWhile, dropWhile and span (combibnation takeWhile and dropWhile)
-  * HOFs that take binary operators: reduce and fold
+  * HOFs that take unary operators: ```filter```, ```filterNot``` and ```partition``` (combination filter and filterNot. ```takeWhile```, ```dropWhile``` and ```span``` (combibnation takeWhile and dropWhile)
+  * HOFs that take binary operators: ```reduce``` and ```fold```
 
-  ```scala
-  //Scan is like recording the intermediate values of computing a fold
-  //fold
-  List("a","b","c").fold("!")((x,y) => x+y) //> res8: String = !abc
-  List("a","b","c").scan("!")((x,y) => x+y) //> res9: List[String] = List(!, !a, !ab, !abc)
+   ```scala
+   //Scan is like recording the intermediate values of computing a fold
+   
+   //fold
+   List("a","b","c").fold("!")((x,y) => x+y) // !abc
+   List("a","b","c").scan("!")((x,y) => x+y) // List(!, !a, !ab, !abc)
 
-  //foldLeft - scans the original list and constructs the new list from left to right
-  List("a","b","c").foldLeft("!")((x,y) => x+y)
-                                                //> res10: String = !abc
-  List("a","b","c").scanLeft("!")((x,y) => x+y)
-                                                //> res11: List[String] = List(!, !a, !ab, !abc)
- List("a","b","c").foldLeft("!")((x,y) => y+x)   //> res12: String = cba!
- List("a","b","c").scanLeft("!")((x,y) => y+x)
-                                                //> res13: List[String] = List(!, a!, ba!, cba!)
+   //foldLeft - scans the original list and constructs the new list from left to right
+   List("a","b","c").foldLeft("!")((x,y) => x+y) // !abc
+   List("a","b","c").scanLeft("!")((x,y) => x+y)  // List(!, !a, !ab, !abc)
+ List("a","b","c").foldLeft("!")((x,y) => y+x)   // cba!
+ List("a","b","c").scanLeft("!")((x,y) => y+x)  // List(!, a!, ba!, cba!)
   //foldRight - scans the original list and constructs the new list from right to left
-  List("a","b","c").foldRight("!")((x,y) => x+y)
-                                                //> res14: String = abc!
-  List("a","b","c").scanRight("!")((x,y) => y+x)
-                                                //> res15: List[String] = List(!cba, !cb, !c, !)
- List("a","b","c").foldRight("!")((x,y) => y+x)  //> res16: String = !cba
- List("a","b","c").scanRight("!")((x,y) => y+x)
-                                                //> res17: List[String] = List(!cba, !cb, !c, !)
+  List("a","b","c").foldRight("!")((x,y) => x+y)  // abc!
+  List("a","b","c").scanRight("!")((x,y) => y+x)  // List(!cba, !cb, !c, !)
+  List("a","b","c").foldRight("!")((x,y) => y+x)  // !cba
+  List("a","b","c").scanRight("!")((x,y) => y+x)  // List(!cba, !cb, !c, !)
+                                                
+  /** Calculate max of an array using fold is super easy */
+  //we used the par method on 
+  	//the collection to turn it into a parallel data collection 
+  def max(xs: Array[Int]): Int = {
+  	//instead of math.max, you can use (x, y) => if(x > y) x else y
+  	xs.par.fold(Int.MinValue)(math.max) 
+  }                                                  
 
   ```
 
 * Natural induction and structural induction can be performed on functional programs because functional programming allows for referential transparency. Concat on list can be proved to be associative using structural induction. The fold-unfold method for equational proof of functional programs.
 
 ##### [Week 6](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-functional/src/week6) -
+
+![http://docs.scala-lang.org/resources/images/collections.mutable.png](http://docs.scala-lang.org/resources/images/collections.mutable.png)
+
 * Other Collections of Sequence. List, Vector, and Range are implementation of  Sequence, i.e., Sequence is a base class of List and Vector. Array and String are sequence like structures and "subclasses" of Sequence, but both came from the Java universe. Set and Map all have the base class Iterable.
   * List - O(N). Good for operations with access patterns that requires you to access head and tail sequentially. For Cons, you  use ```::```. For concat, you use ```++```. The fundamental operation for List is head and tail.
   * Vector - O(Log_32(N)). Good for bulk operations, such as map or a fold or filter (highly parallelizable operations). You can do it in chunks of 32. For Cons, you use ```+:``` to add element to the left of the Vector, or use ```:+``` to add element to the right of the Vector. Note that ```:``` always points to the sequence. For Vectors, the fundamental operation is index.
@@ -150,21 +156,21 @@ Instructor: **Martin Odersky**
 
  * Range
 
-    ```scala
-    val r: Range = 1 until 5 //Range(1, 2, 3, 4)
-    val t: Range = 1 to 5 //Range(1, 2, 3, 4, 5)
-    1 to 10 by 3 //Range(1, 4, 7, 10)
-    6 to 1 by -2 //Range(6, 4, 2)
-
-    def rangePairs(m: Int, n: Int) = {
-		 (1 to m) flatMap (x => (1 to n) map (y => (x, y)))
-	 }    
-	 rangePairs(3,2) //Vector((1,1), (1,2), (2,1), (2,2), (3,1), (3,2))
-
-    def isPrime(n: Int): Boolean = {
-		(2 until n) forall (d => n % d != 0)
-	 }
-    ```
+	    ```scala
+	    val r: Range = 1 until 5 //Range(1, 2, 3, 4)
+	    val t: Range = 1 to 5 //Range(1, 2, 3, 4, 5)
+	    1 to 10 by 3 //Range(1, 4, 7, 10)
+	    6 to 1 by -2 //Range(6, 4, 2)
+	
+	    def rangePairs(m: Int, n: Int) = {
+			 (1 to m) flatMap (x => (1 to n) map (y => (x, y)))
+		 }    
+		 rangePairs(3,2) //Vector((1,1), (1,2), (2,1), (2,2), (3,1), (3,2))
+	
+	    def isPrime(n: Int): Boolean = {
+			(2 until n) forall (d => n % d != 0)
+		 }
+	    ```
 
 * Combinatorial Search and For-Expressions - for expressions handle nested sequences in combinatorial problems. Higher order functions on sequences often replaces loops. For nested loops, we can use for expressions. The general form is ```for ( s ) yield e ``` where s is a sequence of generators and filters, and e is an expression whose value is returned by an iterator. A generator is in the form ```p <- e``` instead of ( s ), braces { s } can also be used, and then the sequence of generators and filters can be written on multiple lines without requiring semicolons.
 
@@ -182,8 +188,8 @@ Instructor: **Martin Odersky**
  val capitalOfCountry = Map("US" -> "Washington", "Switzerland" -> "Bern")
  capitalOfCountry("US")   //Washington
  capitalOfCountry("Andorra")  //NoSuchElementException
- capitalOfCountry get "Andorra"                  //> res1: Option[String] = None
- capitalOfCountry get "US"                       //> res2: Option[String] = Some(Washington)
+ capitalOfCountry get "Andorra"                  //> None
+ capitalOfCountry get "US"                       //> Some(Washington)
 
  //With default function catches the exception and returns a default value
  val cap1 = capitalOfCountry withDefaultValue "<unknown>"
@@ -194,11 +200,16 @@ Instructor: **Martin Odersky**
  		case Some(capital) => capital
  		case None => "missing data"
  	}
- 	showCapitalWithOption("US")               //Washington
- 	showCapitalWithOption("Andorra")          //missing data
+ 	showCapitalWithOption("US")               //> Washington
+ 	showCapitalWithOption("Andorra")          //> missing data
+ 
+ //To subtract something from a Map
+ val m = Map("1" -> "a", "2" -> "b")		// Map(1 -> a, 2 -> b)
+ m - "2"                 // Map(1 -> a)
+ 
  ```
 
- groupBy and orderBy operations in SQL queries have analogues in Scala, namely sortWith and sorted. The ```groupBy``` method takes a function mapping an element of a collection to a key of some other type, and produces a `Map` of keys and collections of elements which mapped to the same key.
+ ```groupBy``` and ```orderBy``` operations in SQL queries have analogues in Scala, namely ```sortWith``` and ```sorted```. The ```groupBy``` method takes a function mapping an element of a collection to a key of some other type, and produces a `Map` of keys and collections of elements which mapped to the same key.
 
  ```scala
  val fruit = List("apple", "pear", "orange", "pineapple")
@@ -209,6 +220,7 @@ Instructor: **Martin Odersky**
  //groupBy partitions a collection into a map of collections according to a discriminator function f
  fruit groupBy (_.head)  //Map(p -> List(pear, pineapple), a -> List(apple), o -> List(orange))
 ```
+* In general scala collections have certain accessor combinators like ```sum```, ```fold```, ```count```, and transformer combinators like ```map```, ```flatMap```, and ```groupBy```.
 
 #### Programming Assignments
 1. Recursive Functions - demonstrates recursion
@@ -305,9 +317,51 @@ Instructor: **Martin Odersky**
 * Functions and State - in a reactive program, there will be mutable states. We will broaden our definitions of functions to work with states. We have worked with pure functions have no side effects, but working with mutable states has repurcussions. The concept of time is important for mutable states. In general, objects with mutable states are identifiable through the following two observations:
 	* when we perform the same operation twice below, we get back different answers. This is because the history of the operation matters.
 	* Whenever you see ```var```, it should be a red flag that you are probably dealing with mutable states. Every form of mutable state is constructed from variables. A ```var``` is like a ```val``` but a ```var``` can be changed later on by assignment.
-* Identity and Change - What it means to be equivalent - x and y are operational equivalence if no possible test can distinguish between them.
-* Loops - While and Repeat can be translated into higher order functions Do-while loops can be implemented by making WHILE a function inside the DO class. For-loops can be implemented using for-expressions and foreach call on Ranges (1 until n).
-* Discrete Event Simulator
+	* Identity and Change - What it means to be equivalent - x and y are operational equivalence if no possible test can distinguish between them.
+ 
+ See [BankAccount.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week3/BankAccount.scala) and [accounts.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week3/accounts.sc) for a stateful implementation of the BankAccount.
+
+* Loops - While and Repeat can be translated into higher order functions Do-while loops can be implemented by making WHILE a function inside the DO class. For-loops can be implemented using for-expressions and foreach call on Ranges (1 until n). See [loops.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week3/loops.sc) for the functional implementation of various loops.
+* Discrete Event Simulator ([Simulation.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week3/Simulation.scala) and [digitalCircuits.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week3/digitalCircuit.sc)) which maintains a class heirarchy:
+
+
+	```scala
+	trait Simulation {
+		type Action = () => Unit
+		case class Event(time: Int, action: Action)
+		//...
+	}
+	abstract class Gates extends Simulation {
+		class Wire {
+			//...
+		}
+		def inverter(input: Wire, output: Wire): Unit = {
+			//...
+		}
+		def andGate(in1: Wire, in2: Wire, output: Wire): Unit = {
+			//...
+		}
+	 	def orGate(in1: Wire, in2: Wire, output: Wire): Unit = {
+	 		//...
+ 		}
+ 		def probe(name: String, wire: Wire): Unit = {
+ 			//...
+ 		}
+	}
+	abstract class Circuits extends Gates {
+  		//...
+  	}
+  	trait Parameters {
+  		def InverterDelay = 2
+  		def AndGateDelay = 3
+  		def OrGateDelay = 5
+	}
+	object sim extends Circuits with Parameters
+	import sim._
+	//...
+	
+	```
+	
 	* An implementation of it is the digital circuit simulator in which each type of gate observes whether any input changes and if so, updates the output signal after some delay (performs action after delay).
 	* Discrete Event Simlator API has performs actions specified by the user at a given moment. An ```action``` is a function that doesn't take any parameters and returns Unit.
 		
@@ -319,17 +373,17 @@ Instructor: **Martin Odersky**
 	* In the end, it's a tradeoff when you use mutable states. On one hand, assignments allow us to formulate certain programs in an elegant way. On the other hand, you lose referential transparency (RT) and the substitution model (tools for you to reason about the program).
 
 ##### [Week 4](https://github.com/xiaoyunyang/coursera-scala-specialization/tree/master/coursera-program-design/src/week4) -
-* Imperative Event Handling (used a lot for User Interface): The Observer Pattern (e.g., publish/subscribe and model/view/controller) - This pattern has a few shortcomings.
+* Imperative Event Handling (used a lot for User Interface): The Observer Pattern (e.g., publish/subscribe and model/view/controller). See [BankAccountPublisher.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week4/BankAccountPublisher.scala), [Publisher.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week4/Publisher.scala), and [observers.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week4/observers.sc) for an implementation of BankAccount manager using the observer pattern. This pattern has a few shortcomings.
 	* The Good: 
 		* Decouples views from state and allows us to have varying number of views of a given state. And it's simple to set up.
 	* The Bad: 
-		1. Forces imperative style (because returns Unit as result).
-		2. Many moving parts that need to be co-ordinated. Every subscriber has to announce itself to the publisher with subscribe and the publisher has to handle these things in the datastructure.
-		3. Things will get more complicated when you add concurrency, e.g., when you have a view that observes two different models that get updated concurrently, then the two models can call the handler method of the view, you get race conditions.
-		4. Another thing is views are still tightly bound to one state. Event handling can be very buggy.
+		* Forces imperative style (because returns Unit as result).
+		* Many moving parts that need to be co-ordinated. Every subscriber has to announce itself to the publisher with subscribe and the publisher has to handle these things in the datastructure.
+		* Things will get more complicated when you add concurrency, e.g., when you have a view that observes two different models that get updated concurrently, then the two models can call the handler method of the view, you get race conditions.
+		* Another thing is views are still tightly bound to one state. Event handling can be very buggy.
 * Functional Reactive Programming (FRP) - reactive programming is about reacting to sequences of events that happen in time. The event sequence is aggregated into a signal. Instad of mutating states to propagate updates, we create new signals in terms of existing ones.
 	* Some examples are: [Flapjax](http://www.flapjax-lang.org/), [Elm](http://elm-lang.org/) (javascript), [Bacon.js](https://baconjs.github.io/) (javescript), [React4J](https://bitbucket.org/yann_caron/react4j/wiki/Home) (Java). Rx is a event streaming dataflow programming system, but not really FRP. ```Scala.reactive``` handles FRP.
-	* Signal can be a variable. The crucial difference between a variable signal and mutable variables is that we can define relationship between two signals and when one changes, the other automatically changes. There are no such mechanisms for mutable variables and they must be updated manually.
+* ```Signal``` is a value that you can sample at a particular point in time. Signal can be a variable. The crucial difference between a variable signal and mutable variables is that we can define relationship between two signals and when one changes, the other automatically changes. There are no such mechanisms for mutable variables and they must be updated manually. See [BankAccountPublisher.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week4/BankAccountPublisher.scala) and [signal.sc](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week4/signal.sc) for examples of using Signals to maintain states.
 		
 	```scala
 	//assign constant value to a signal
@@ -387,26 +441,35 @@ Instructor: **Martin Odersky**
 	val num = Var(1)
 	val twice = Signal(num() * 2)
 	num() = 2
-	twice()		// 4
+	twice()	// 4
 	
 	var num2 = Var(1)
 	val twice2 = Signal(num2() * 2)
 	num2 = Var(2)
-	twice2()		// 2	
+	twice2()	// 2	
 	```
-* Implementation of ```Signal``` and ```Var```, which is a subclass of ```Signal``` with an update method.
-
+* Implementation of ```Signal``` and ```Var```, which is a subclass of ```Signal``` in [Signal.scala](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-program-design/src/week4/Signal.scala). Each signal maintains its current value, the current expression that defines the signal value, and a set of observers (i.e., the other signals that depend on its value. 
+	* The first implementation of Signal relies on a global variable ```caller```, which is a stack. Global variables in concurrency are bad news (results in race conditions). One way to deal with that is to use synchronization.
+	* For synchronization, replace global variable by thread local state, i.e., use ```scala.util.DynamicVariable```. Thread-local state means each thread accesses a separate copy of a variable. Thread-local state is an improvement to the unprotected global variable, but it has its own problems (fundamentally imperative, use of threads could create deadlock, its implementation on JDK involves a slow global hash table lookup).
+	* Another solution involves implicit parameters. Instead of maintaining a thread-local variable, pass its current value into a signal expression as an implicit parameter. 
+* Latency as Effect - Computation can take time. Futures.
+* **Future Topics:**
+	* Threads are how you do concurrency, but threads are really low levels and dangerous. Some good abstractions of Threads a Futures, Reactive Streams, and Actors using [Akka](http://akka.io/).
+	* Using Parallel data structures and parallel algorithms to use multi-threadedness to gain efficiency.
+	* If we want to scale parallelism beyond what a single computer can do, then we arrive at distributed programs. Important topics are data analysis and big data using Apache [Spark](http://spark.apache.org/). Spark can be seen as a framework for distributed scala collections. 
 
 #### Programming Assignments
 1. Bloxorz - get practice on lazy evaluation, for-expression, Stream, and DFS/BFS graph search algorithms. You are solving a
 2. Quickcheck - demonstrates functions and state
-3. Calculator - demonstrates timely effects
-
+3. Calculator - demonstrates timely effects and implement UI using ```Signal```. Hint: dependent signals must be fully wrap the signal upon which it depends (including all calculations). Do not assign signal values to intermediate values ```val```. To store intermediary calculations using signal, assign intermediaries to ```def```. Wrap every atomic computation involing signal values in parentheses.
+	* To run compile and run the webUI page with output in console: ```sbt > webUI/fastOptJS``` 
 
 #### Solutions links
 1. [ncolomer](https://github.com/ncolomer/coursera/tree/master/reactive)
 2. [ehsanmok](https://github.com/ehsanmok/Scala-Parallel-Programming)
 3. [Quickcheck Gist](https://gist.github.com/wh5a/7394082)
+4. [alias1](https://github.com/alias1/coursera-reactive)
+5. [ysihaoy](https://github.com/ysihaoy/coursera-reactive-scala)
 
 ## Parallel Programming
 ##### Instructors: Viktor Kuncak and Aleksander Prokopec
@@ -419,8 +482,10 @@ Instructor: **Martin Odersky**
 * First Class Tasks
 
 ##### [Week 2](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-parallel/src/week2) -
+* Task parallelism (big idea: create reduction tree):
+  > a form of parallelizaton that distributes execution processes across computing nodes.
+  
 * Parallel map - implement using a Tree:
-
 
   ```scala
   def parMap[A: Manifest, B: Manifest](t: Tree[A], f: A => B): Tree[B] = t match {
@@ -476,6 +541,112 @@ Instructor: **Martin Odersky**
   }
   ```
 
+##### [Week 3](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-parallel/src/week3) -
+
+* Data parallelism
+  > a form of parallelization that distributes data across computing nodes.
+  
+  Data parallelism provides significant speedup over Task parallelism when the work is not constant.
+* parallel for-loop - Scala collections can be converted to parallel collections by invoking the ```.par``` method. Subsequent data parallel operations are executed in parallel:
+
+ ```scala
+ //a program that checks for palindrome
+ (1 until 1000).par
+ 		.filter(n => n % 3 == 0)
+		.count(n => n.toString == n.toString.reverse)
+ ```	 
+Data Parallelism does not work for ```foldLeft```, ```foldRight``` ```scanLeft```, ```scanRight```, ```reduceLeft```, and ```reduceRight``` operations because these processes process elements sequentially. In order to use data-parallelism, we have to use ```fold```, ```scan```, and ```reduce```.
+
+ ```scala
+ def foldLeft(z: A)(f: (B, A) => B): B //can't have data parallelism
+ def fold(z: A)(f: A, A) => A): A //can have data parallelism
+
+ ```
+	* ```foldLeft``` is more expressive than ```fold```, however ```fold``` allows for data parallelization, with the condition that the neutral element ```z``` and the binary operator ```f``` must form a monoid. ```z``` must be the same type as the members of the collection and the ```f``` operator must be associative for the program to work correctly. 
+	 
+	   ```scala
+	   def fold(z: A)(f: A, A) => A): A
+	   def foldLeft(z: A)(f: (B, A) => B): B
+	   def fold(z: A)(op: (A,A) => A): A = foldLeft[A](z)(op) 
+	   
+	   /** Example showing the difference between fold and foldLeft */
+	   //The following program does not compile -- z is 0 and not a Char
+	   Array('E', 'P', 'F', 'L').par.fold(0)((count, c) => 
+	      if(isVowel(c)) count+1 else count)
+	      
+	   //However, foldLeft compiles because for foldLeft, z element does not
+	   //have to be the same type as the elements in the array
+	   Array('E', 'P', 'F', 'L').foldLeft(0)((count, c) =>
+			if(isVowel(c)) count+1 else count)
+		
+		def isVowel(c: Char): Boolean =
+			List('a','e','i','o','u') exists (a => a == Character.toLowerCase(c))
+	   
+	   ```
+	
+  *  ```aggregate``` addresses the shortcomings of both the fold (not expressive) and foldLeft (no data parallelization). The ```aggregate``` operation is defined as: 
+	
+     ```scala
+     def aggregate[B](z: B)(f: (B,A) => B, g: (B, B) => B): B
+     ```
+    how it works is it divides the data into many smaller parts for mutiple processors to compute via foldLeft. Then it combines back into a form similar to fold. The parallel reduction operator and the neutral element form a monoid.
+    
+     ```scala
+  	 // Use aggregate to count the number of vowels in an array
+    Array('E', 'P', 'F', 'L').par.aggregate(0)(
+   			(count, c) => if(isVowel(c)) count + 1 else count,
+  			_ + _
+  	 )  
+  	 ```
+    
+* Scala Parallel Collection: 
+	![](resources/ScalaParallelCollection.png)
+	* Sequential traits
+		*  ```Traversable[T]``` - collection of elements with type T, with operations implemented using ```foreach```.
+		* ```Iterable[T]``` - collection of elements with type T, with operations implemented using ```iterator```.
+		* ```Seq[T]``` - an ordered sequence of elements with type T.
+		* ```Set[T]``` - a set of elements with type T (no duplicates).
+		* ```Map[K,V]``` - a map of keys with type K associated with values of type V (no duplicate keys). 
+	* Parallel Counterpart traits - ```ParIterable[T]```, ```ParSeq[T]```, ```ParSet[T]```, and ```ParMap[K,V]```.
+	* For code that is agnostic about parallelism, there exists a separate hierarchy of generic collection traits ```GenIterable[T]```, ```GenSeq[T]```, ```GenSet[T]``` and ```GenMap[K,V]```. A generic collection type, such as GenSeq or GenMap, can be implemented either with a parallel or a sequential collection. This means that the classify method will either run sequentially or in parallel, depending on the type of the collection that is passed to it, and returns a sequential or a parallel map, respectively. The method is oblivious to whether the algorithm is parallel or not.
+	* Not thread-safe: ```mutable.Map[K,V]```.
+	* Thread-safe: ```TrieMap[K,V]``` - the ```snapshot``` method can be used to efficiently grab the current state by creating a copy of the current state. 
+	* Rules:
+		* Never write to a collection that is concurrently traversed.
+		* Never read from a collection that is concurrently modified.
+		* Don't mutate collection states without synchronization.
+		* Look for ways to use the correct combinator to solve the problem via pure functions - No side effect gives deterministic and correct data-parallel operation (deterministic programs that don't crash).
+* Data Parallel Abstractions - iterator, splitter, builders, combiners.
+
+##### [Week 4](https://github.com/xiaoyunyang/coursera-scala-specialization/blob/master/coursera-parallel/src/week2) -	
+* Implementation of Combiners - picking datastructures that are more amenable to parallelization. 
+	* Transformer operation is a collection operation that creates another collection, instead of adjusting a single value. Methods such as ```filter```, ```map```, ```flatMap```, and  ```groupBy``` are examples of transformer operations. Methods such as ```fold```, ```sum```, and ```aggregate``` are not transformer operations.
+	
+	 ```scala
+	 //Builders can only implement sequential transformer operations
+	 trait MyBuilder[A, Repr] {
+		 //The `+=` adds the items into the collection sequentially
+  		 def +=(elem: A): MyBuilder[A, Repr] 
+  		 def result: Repr //obtains the resulting sequence
+	 }
+	
+	 //Combiners implement parallel transformer operations
+	 //When Repr is a Set or a Map, combine represents a Union
+	 //When Repr is a sequence, combine represents concatenation
+	 trait MyCombiner[A, Repr] extends MyBuilder[A, Repr] {
+  		 def combine(that: MyCombiner[A, Repr]): MyCombiner[A, Repr]
+	 }
+	 ```
+	 
+	* Constructing datastructures in parallel requires an efficient ```combine``` operation. Why? Because we are copying things multiple times to create the sub-problems for the multicore computer to process in parallel and merging things back into the final result. The act of copying takes time. 
+	* We cannot implement an efficient ```combine``` operation for Arrays.
+	* Worst case lookup time:
+		* Hash tables - O(1)
+		* balanced tree - O(log n)
+		* Linked list - O(n)
+	* However, most data structures can be construted in parallel using two-phase constructure, where the intermediary datastructures are ArrayBuffers, Hash tables, balanced trees, or quad trees (for partitioning the data based on their spatial coordinates). 
+* Conc-tree Data Structure - 
+
 #### Programming Assignments
 1. Box Blur Filter - demonstrates Tasks
   * boxBlurKernel - this method computes the blurred RGBA value of a single pixel of the input image
@@ -493,3 +664,5 @@ Instructor: **Martin Odersky**
 #### Solutions links
 1. [hugcruz](https://github.com/hugcruz/parprog1)
 2. [ehsanmok](https://github.com/ehsanmok/Scala-Parallel-Programming)
+3. [TomLous](https://github.com/TomLous/coursera-parallel-programming-scala/tree/master/src/main/scala)
+4. [reinno](https://github.com/reinno/coursera-parprog)
