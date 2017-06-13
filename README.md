@@ -555,19 +555,19 @@
   Data parallelism provides significant speedup over Task parallelism when the work is not constant.
 * parallel for-loop - Scala collections can be converted to parallel collections by invoking the ```.par``` method. Subsequent data parallel operations are executed in parallel:
 
- ```scala
- //a program that checks for palindrome
- (1 until 1000).par
- 		.filter(n => n % 3 == 0)
-		.count(n => n.toString == n.toString.reverse)
- ```	 
-Data Parallelism does not work for ```foldLeft```, ```foldRight``` ```scanLeft```, ```scanRight```, ```reduceLeft```, and ```reduceRight``` operations because these processes process elements sequentially. In order to use data-parallelism, we have to use ```fold```, ```scan```, and ```reduce```.
-
- ```scala
- def foldLeft(z: A)(f: (B, A) => B): B //can't have data parallelism
- def fold(z: A)(f: A, A) => A): A //can have data parallelism
-
- ```
+	 ```scala
+	 //a program that checks for palindrome
+	 (1 until 1000).par
+	 		.filter(n => n % 3 == 0)
+			.count(n => n.toString == n.toString.reverse)
+	 ```	 
+	Data Parallelism does not work for ```foldLeft```, ```foldRight``` ```scanLeft```, ```scanRight```, ```reduceLeft```, and ```reduceRight``` operations because these processes process elements sequentially. In order to use data-parallelism, we have to use ```fold```, ```scan```, and ```reduce```.
+	
+	 ```scala
+	 def foldLeft(z: A)(f: (B, A) => B): B //can't have data parallelism
+	 def fold(z: A)(f: A, A) => A): A //can have data parallelism
+	
+	 ```
 
 * ```foldLeft``` is more expressive than ```fold```, however ```fold``` allows for data parallelization, with the condition that the neutral element ```z``` and the binary operator ```f``` must form a monoid. ```z``` must be the same type as the members of the collection and the ```f``` operator must be associative for the program to work correctly. 
 	 
