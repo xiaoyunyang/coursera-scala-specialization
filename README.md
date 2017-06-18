@@ -100,34 +100,33 @@
   * HOFs that take unary operators: ```filter```, ```filterNot``` and ```partition``` (combination filter and filterNot. ```takeWhile```, ```dropWhile``` and ```span``` (combibnation takeWhile and dropWhile)
   * HOFs that take binary operators: ```reduce``` and ```fold```
   
-	  	```scala
-		//Scan is like recording the intermediate values of computing a fold
-	
-		//fold
-		List("a","b","c").fold("!")((x,y) => x+y) // !abc
-		List("a","b","c").scan("!")((x,y) => x+y) // List(!, !a, !ab, !abc)
-	
-		//foldLeft - scans the original list and constructs the new list from left to right
-		List("a","b","c").foldLeft("!")((x,y) => x+y) // !abc
-		List("a","b","c").scanLeft("!")((x,y) => x+y)  // List(!, !a, !ab, !abc)
-		List("a","b","c").foldLeft("!")((x,y) => y+x)   // cba!
-		List("a","b","c").scanLeft("!")((x,y) => y+x)  // List(!, a!, ba!, cba!)
-	
-		//foldRight - scans the original list and constructs the new list from right to left
-		List("a","b","c").foldRight("!")((x,y) => x+y)  // abc!
-		List("a","b","c").scanRight("!")((x,y) => y+x)  // List(!cba, !cb, !c, !)
-		List("a","b","c").foldRight("!")((x,y) => y+x)  // !cba
-		List("a","b","c").scanRight("!")((x,y) => y+x)  // List(!cba, !cb, !c, !)
+	```scala
+	//Scan is like recording the intermediate values of computing a fold
 
-		/** Calculate max of an array using fold is super easy */
-		//we used the par method on 
-		//the collection to turn it into a parallel data collection 
-		def max(xs: Array[Int]): Int = {
-		   //instead of math.max, you can use (x, y) => if(x > y) x else y
-		   xs.par.fold(Int.MinValue)(math.max) 
-		}                                                  
-	
-		```
+	//fold
+	List("a","b","c").fold("!")((x,y) => x+y) // !abc
+	List("a","b","c").scan("!")((x,y) => x+y) // List(!, !a, !ab, !abc)
+
+	//foldLeft - scans the original list and constructs the new list from left to right
+	List("a","b","c").foldLeft("!")((x,y) => x+y) // !abc
+	List("a","b","c").scanLeft("!")((x,y) => x+y)  // List(!, !a, !ab, !abc)
+	List("a","b","c").foldLeft("!")((x,y) => y+x)   // cba!
+	List("a","b","c").scanLeft("!")((x,y) => y+x)  // List(!, a!, ba!, cba!)
+
+	//foldRight - scans the original list and constructs the new list from right to left
+	List("a","b","c").foldRight("!")((x,y) => x+y)  // abc!
+	List("a","b","c").scanRight("!")((x,y) => y+x)  // List(!cba, !cb, !c, !)
+	List("a","b","c").foldRight("!")((x,y) => y+x)  // !cba
+	List("a","b","c").scanRight("!")((x,y) => y+x)  // List(!cba, !cb, !c, !)
+
+	/** Calculate max of an array using fold is super easy */
+	//we used the par method on 
+	//the collection to turn it into a parallel data collection 
+	def max(xs: Array[Int]): Int = {
+	   //instead of math.max, you can use (x, y) => if(x > y) x else y
+	   xs.par.fold(Int.MinValue)(math.max) 
+	}                                                  
+	```
 
 * Natural induction and structural induction can be performed on functional programs because functional programming allows for referential transparency. Concat on list can be proved to be associative using structural induction. The fold-unfold method for equational proof of functional programs.
 
@@ -139,15 +138,14 @@
   * List - O(N). Good for operations with access patterns that requires you to access head and tail sequentially. For Cons, you  use ```::```. For concat, you use ```++```. The fundamental operation for List is head and tail.
   * Vector - O(Log_32(N)). Good for bulk operations, such as map or a fold or filter (highly parallelizable operations). You can do it in chunks of 32. For Cons, you use ```+:``` to add element to the left of the Vector, or use ```:+``` to add element to the right of the Vector. Note that ```:``` always points to the sequence. For Vectors, the fundamental operation is index.
 
-		```scala
-		0 +: nums //Vector(0, 1, 2, 3, -88)
-		nums :+ 0 //Vector(1, 2, 3, -88, 0)
-		
-		def scalarProduct(xs: Vector[Double], ys: Vector[Double]): Double = {
-		    (xs zip ys).map{case (x,y) => x*y }.sum
-		  }
-		  
-		  ```
+	```scala
+	0 +: nums //Vector(0, 1, 2, 3, -88)
+	nums :+ 0 //Vector(1, 2, 3, -88, 0)
+
+	def scalarProduct(xs: Vector[Double], ys: Vector[Double]): Double = {
+	    (xs zip ys).map{case (x,y) => x*y }.sum
+	}		
+	```
 
  * String - a sequence from the java universe [java.lang.String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
 
@@ -161,21 +159,21 @@
 
  * Range
 
-	    ```scala
-	    val r: Range = 1 until 5 //Range(1, 2, 3, 4)
-	    val t: Range = 1 to 5 //Range(1, 2, 3, 4, 5)
-	    1 to 10 by 3 //Range(1, 4, 7, 10)
-	    6 to 1 by -2 //Range(6, 4, 2)
-	
-	    def rangePairs(m: Int, n: Int) = {
-			 (1 to m) flatMap (x => (1 to n) map (y => (x, y)))
-		 }    
-		 rangePairs(3,2) //Vector((1,1), (1,2), (2,1), (2,2), (3,1), (3,2))
-	
-	    def isPrime(n: Int): Boolean = {
-			(2 until n) forall (d => n % d != 0)
-		 }
-	    ```
+    ```scala
+    val r: Range = 1 until 5 //Range(1, 2, 3, 4)
+    val t: Range = 1 to 5 //Range(1, 2, 3, 4, 5)
+    1 to 10 by 3 //Range(1, 4, 7, 10)
+    6 to 1 by -2 //Range(6, 4, 2)
+
+    def rangePairs(m: Int, n: Int) = {
+		 (1 to m) flatMap (x => (1 to n) map (y => (x, y)))
+	 }    
+	 rangePairs(3,2) //Vector((1,1), (1,2), (2,1), (2,2), (3,1), (3,2))
+
+    def isPrime(n: Int): Boolean = {
+		(2 until n) forall (d => n % d != 0)
+	 }
+    ```
 
 * Combinatorial Search and For-Expressions - for expressions handle nested sequences in combinatorial problems. Higher order functions on sequences often replaces loops. For nested loops, we can use for expressions. The general form is ```for ( s ) yield e ``` where s is a sequence of generators and filters, and e is an expression whose value is returned by an iterator. A generator is in the form ```p <- e``` instead of ( s ), braces { s } can also be used, and then the sequence of generators and filters can be written on multiple lines without requiring semicolons.
 
