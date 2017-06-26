@@ -1,6 +1,6 @@
 ## Motivation
 
-__Why Learn Functional Programming?__
+__Why Learn Functional Programming (FP)?__
 
 Let's start with a simple example to demonstrate the key differences between functional programming  and imperative programming.
 
@@ -82,8 +82,17 @@ findAve: (l: List[Double])Double
 findAve(List(1,1,3)) //>1.6666666666666667
 ```
 
-#### Cool Ideas in FP
+## Key (and cool) Ideas From FP
+
+__Higher Order Functions (HOFs)__
+
+Probably the coolest and most useful concept in FP. A HOF is simply a function that takes another function as input.
+
+__Polymorphic Functions__
+
+
 __Currying__
+
 The idea of Currying is named after the mathematician Haskell Curry. He also discovered one of the most important results in computer science, the Curry-Howard isomorphism which says that a program is a logical proof, and the hypothesis that it proves is its type.
 
 ```scala
@@ -94,7 +103,38 @@ The idea of Currying is named after the mathematician Haskell Curry. He also dis
   //> curry: [A, B, C](f: (A, B) => C)A => (B => C)
 ```
 
+__Pattern Matching__
+
+
+__Recursion__
 
 
 
+__Referential Transparency (RT)__
+
+As [FP in Scala](https://github.com/fpinscala/fpinscala/wiki/Chapter-1:-What-is-functional-programming%3F) puts it:
+> Referential transparency forces the invariant that everything a function does is represented by the value that it returns, according to the result type of the function. At each step we replace a term with an equivalent one; computation proceeds by substituting equals for equals. In other words, RT enables equational reasoning about programs.
+
+I like the second definition better:
+> Another way of understanding RT is that the meaning of RT expressions does not depend on context and may be reasoned about locally, whereas the meaning of non-RT expressions is context-dependent and requires more global reasoning.
+
+The obvious benefit is RT makes the program less prone to bugs. Since RT forces data immutability, making a change to your data requires you to create new data, which hurts memory performance. Similar to recursion, there are things "under the hood" that can be done to improve memory performance while still enforcing immutability at a high level. 
+
+
+__Monad__
+
+__Closure__
+
+When you declare a local variable, that variable has a scope. Generally local variables exist only within the block or function in which you declare them.
+
+A closure is a persistent local variable scope.
+
+
+
+__Laziness__
+
+Laziness and memoization could be translated to two obvious principles:
+
+* Laziness = “don’t compute something until you need it”
+* Memoization = “don’t recompute something you have computed before”.
 
