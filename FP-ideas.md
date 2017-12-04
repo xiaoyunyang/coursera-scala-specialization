@@ -1,8 +1,9 @@
 ## Motivation
+![Why Functional Programming](https://i.imgur.com/Sex1E8m.jpg)
 
 __Why Learn Functional Programming (FP)?__
 
-Let's start with a simple example to demonstrate the key differences between functional programming  and imperative programming.
+Let's start with a simple motivating example to demonstrate the key differences between functional programming  and imperative programming.
 
 Suppose you want to find the average of a list of Ints. In imperative programming, you would do something like this:
 
@@ -31,23 +32,19 @@ println(s"The average of $list is $ave") //> The average of List(1.0, 2.0, 3.0) 
 
 The most visible benefits of functional programming are:
 
-* developer productivity - better code reusability and modularity, which is made possible by treating functions as composable primitives and something that describes behavior in the abstract (i.e., without binding it to actual use cases or data). 
-* Program correctness - a benfit of referential transparency
-* Scalability - program correct whether run on one core or multiple cores (another benefit of referential transparency)
+* __developer productivity__ - better code reusability and modularity, which is made possible by treating functions as composable primitives and something that describes behavior in the abstract (i.e., without binding it to actual use cases or data). 
+* __Program correctness__ - a benfit of referential transparency
+* __Scalability__ - program correct whether run on one core or multiple cores (another benefit of referential transparency)
 
 __Why Now?__
 
-1950s - 
-Functional programming was invented, but not popular because it took more memory to be stateless. Memory was expensive
+* 1950s - 
+Functional programming was invented, but not popular because it took more memory to be stateless. Memory was expensive.
+* 1980s - Object Oriented Programming (OO) became popular in the 80s because GUIs became popular. In OO style, it’s easier to program things that use a fixed number of operations for an unlimited number of operation.
+* 2010s - Memory is cheap. Can’t make transistors any smaller (marginal gains in hardware capability). Fast processing and big data processing requires more than one core.  There has been an increasing emphasis on asynchronous, distributed, multi-core and use cloud computing. Multicore competing for the same memory bus, OS no longer manages threads for you on multicore - if you need to perform the same tasks faster and faster, you can increase to unlimited number of cores. Stateful programming is more of a liability now with these new requirement. 
+Functional ➡ no assignments ➡ no states ➡ no blocking or concurrency issues.
 
-1980s - Object Oriented Programming (OO) became popular in the 80s because GUIs became popular. In OO style, it’s easier to program things that use a fixed number of operations for an unlimited number of operation
-
-2010s - Memory is cheap. Can’t make transistors any smaller (marginal gains in hardware capability). Fast processing and big data processing requires more than one core.  There has been an increasing emphasis on asynchronous, distributed, multi-core and use cloud computing. Multicore competing for the same memory bus, OS no longer manages threads for you on multicore - if you need to perform the same tasks faster and faster, you can increase to unlimited number of cores. Stateful programming is more of a liability now with these new requirement. 
-Functional ➡ no assignments ➡ no states ➡ no blocking or concurrency issues
-
-In the words of [SICP](https://mitpress.mit.edu/sites/default/files/6515.pdf):
-
-* A Program is a pattern of rules to direct processes that manipulate data. The functional programming paradigm helps us:
+In the words of [SICP](https://mitpress.mit.edu/sites/default/files/6515.pdf), a Program is a pattern of rules to direct processes that manipulate data. The functional programming paradigm helps us:
 	
 	> use higher order functions to capture patterns in usage.
 
@@ -63,10 +60,10 @@ This section talks about how to use functional programming concepts to design ro
 
 ### Functional Programming Design Patterns
 
-In FP, we don’t want to hard code values or hard code function behaviors. Thus, we parameterize the behavior as another function.  How do we do that? We have to start thinking about functions as something configurable and composable. These are the bread and butter concepts that FP-ers must come to embrace as a way of life:
+In the functional programming paradigm, we want to get away from hard coding values or function behaviors. Thus, we parameterize the behavior as another function.  How do we do that? We have to start thinking about functions as something configurable and composable. These are the bread and butter concepts that FP-ers must come to embrace as a way of life:
 
 
-* __Functions__:  In functional programming, we think of our programs as pipes for data to travel through. Functions can be inputs and outputs.
+* __Functions__:  In FP, we think of our programs as pipes for data to travel through. Functions can be inputs and outputs.
 
 * __Higher Order Functions (HOFs)__:  Probably the coolest and most useful concept in FP. A HOF is simply a function that takes another function as input.
 
@@ -79,7 +76,7 @@ __The Loop Pattern__
 Let's look at what’s in common between the two loop functions and what’s distinct between them. 
 
 * Common:  Take an array of *stuff* and combine them. 
-* The initial value and what the types of data you work on are different. 
+* Distinct: The initial value and what the types of data you work on are different. 
 
 ```javascript
 //in javascript
@@ -113,7 +110,7 @@ We can write a function called `reduce` that takes care of the boilerplate that 
 ["a", "b", "c"].reduce((a,b) => a+b, "") //> "abc"
 ```
 
-`reduce` is actually a __HOF__ that javascript [gives you for free](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=a). What makes it a HOF is that it takes another function as an argument, i.e., `(a,b) => a+b`. In this example, we are being lazy by not declaring this function first (e.g., assigning to a const called `addTwo`) prior to using it as an argument in `reduce`. It is perfectly fine to leave that function without a name, that is *anonymous*, because it's simple and short enough that we can declare it directly in the `reduce` function. The `(a,b,) => a+b` is called a __anonymous function__.
+`reduce` is actually a __HOF__ that javascript [gives you for free](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=a). What makes it a HOF is that it takes another function as an argument, i.e., `(a,b) => a+b`. In this example, we are being lazy by not declaring this function first (e.g., assigning to a const called `addTwo`) prior to using it as an argument in `reduce`. It is perfectly fine to leave that function without a name, that is *anonymous*, because it's simple and short enough that we can declare it directly in the `reduce` function. The `(a,b,) => a+b` is called an __anonymous function__.
 
 `reduce` is also a __polymorphic function__. It does not hardcode behavior and lets you use it on any array of *stuff* and reduce it by specifying a rule (e.g., `(a,b) => a+b`).
 
@@ -167,7 +164,8 @@ __Function Composition and Partial Application (Currying)__
 The idea of Currying is named after the mathematician Haskell Curry. He also discovered one of the most important results in computer science, the Curry-Howard isomorphism which says that a program is a logical proof, and the hypothesis that it proves is its type.
 
 ```scala
-//Currying is when you break down a function that takes multiple arguments into a //series of functions that take part of the arguments.
+//Currying is when you break down a function that takes multiple arguments into a 
+//series of functions that take part of the arguments.
 //converts a function f of two arguments into a function of one argument that partially applies f.
   def curry[A,B,C](f: (A,B) => C): A => (B => C) =
   		(a: A) => (b: B) => f(a,b)  
@@ -178,7 +176,7 @@ Bottomline: Partial application lets you make reusable functions.
 
 ### Types
 
-An interesting observation from the sample code above shows that scala distinguishes between many types of values while javascript has just a few, i.e., `var` (mutable, global),  `const` (immutable) or `let` (mutable, local). This brings up another interesting feature of FP - Types. From [This Video](https://www.youtube.com/watch?v=E8I19uA-wGY):
+An interesting observation from the sample code above shows that Scala distinguishes between many types of values while javascript has just a few, i.e., `var` (mutable, global),  `const` (immutable) or `let` (mutable, local). This brings up another interesting feature of FP - Types. As quoted from [This Video](https://www.youtube.com/watch?v=E8I19uA-wGY):
 
 > Type are not classes. Types are just the label for the set of inputs or the set of outputs. Classes are a collection of functions, Types can be composed.
 
@@ -248,7 +246,6 @@ __Pattern Matching__
 __Recursion__
 
 
-
 ### Referential Transparency (RT)
 
 As [FP in Scala](https://github.com/fpinscala/fpinscala/wiki/Chapter-1:-What-is-functional-programming%3F) puts it:
@@ -259,40 +256,10 @@ I like the second definition better:
 
 The obvious benefit is RT makes the program less prone to bugs. Since RT forces data immutability, making a change to your data requires you to create new data, which hurts memory performance. Similar to recursion, there are things "under the hood" that can be done to improve memory performance while still enforcing immutability at a high level. 
 
-We want to write referential transparent programs to avoid side effects. What are side effects and what are the dangers of side effects?
-
-__Side Effect__
-> A side effect is any application state change that is observable outside the called function other than its returned value. ~ [Eric Elliott](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
-
-Many programs designed with a user interface are especially at risk of side effects. A tell tale sign is anytime your function is reading or modifying external variable (e.g., a global variable) outside its own function scope. These external variables include:
-
-* Reading user input
-* Writing to a file
-* Reading from a network
-* Reliance on a global state variable
-
-Note: reading/modifying global variables/states is a necessary evil in many real time embedded systems due to microprocessor contraints; however, you should not be doing that if your distributed software is not running on microprocessors
-
-How do side effects hurt developer productivity and program correctness?
-
-Java web applications from the early 2000s are littered with try/catch blocks to guard against unintended/undesirable program states due to external processes (e.g., user input or loss of network connectivity). This practice often results in the _blocking_ of operations downstream until the necessary information is obtained.
-
-Side effects makes it difficult for you to reason about the correctness of your program. If you have a referentially transparent function (i.e., free of side effects), then you can look at your function and know exactly what it does, meaning the proof of correctness is limited to the case of testing the response of the function to given inputs. When your program is not referentially transparent, you need to obtain knowledge about external processes, global variables/states, and there is no way to prove correctness of your function by simply running unit tests. You need to run acceptance testing and user testing every time you make a small change in a function. This can have _expensive_ ramification in the real world.
-
-We don't want to get rid of the interesting parts of our program (e.g., user interface) in fear that they will introduce side effects into our program. That's not the conclusion. Rather we want to introduce functional programming design patterns into our programs to protect us from the negative consequences of side effects. How do we do that? Monads. 
-
-__Monads__
-
-There are typically four types of monads to express four types of side effects:
-
-1. Exception - Takes into account operations that can fail. The exception monad is [implemented](http://blog.xebia.com/try-option-or-either/) using `Option`, `Either`, or `Try` in Scala.
-2. Future - Takes into account that computation takes time (latency). The future monad is implemented using `Future` in Scala, which does a callback when the task is complete.
-3. Iterable - Reacting to synchronous data streams.
-4. Observable - Reacting to asynchronous data streams.
+We want to write referential transparent programs to avoid side effects. What are side effects and what are the dangers of side effects? See Monad section below for more on this.
 
 
 ### Laziness
-
 Laziness and memoization could be translated to two obvious principles:
 
 * Laziness = “Don’t compute something until you need it.”
@@ -305,12 +272,36 @@ When you declare a local variable, that variable has a scope. Generally local va
 A closure is a persistent local variable scope.
 
 ### Monad
-* Error handling
-Maps
-* Dealing with wrapped data
-* Functors
-Monoids
-* Aggregating data and operations
+Now you understand higher order functions and types, you are ready for learning what a monad is. Instead of hard coding error handlers in your code to deal with non-deterministic nature of real world applications, you delegate the error handling to monads, which are implemented as a type in Scala. Another way to think about the monad is that [a monad is simply a wrapper](https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534).
+
+There are typically four types of monads to express four types of side effects:
+
+A naive way to handle non-determinism is by writing code with lots of side effects.
+
+> A side effect is any application state change that is observable outside the called function other than its returned value. ~ [Eric Elliott](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
+
+Java web applications from the early 2000s are littered with try/catch blocks to guard against unintended/undesirable program states due to external processes (e.g., user input or loss of network connectivity). This practice often implies lots of boilerplate code that are error prone and results in the _blocking_ of operations downstream until the necessary information is obtained.
+
+Many programs designed with a user interface are especially at risk of side effects. A tell tale sign is anytime your function is reading or modifying external variable (e.g., a global variable) outside its own function scope. These external variables include:
+
+* Reading user input
+* Writing to a file
+* Reading from a network
+* Reliance on a global state variable (Note: reading/modifying global variables/states is a necessary evil in many real time embedded systems due to microprocessor constraints; however, you should not be doing that if your distributed software is not running on microprocessors.)
+
+How do side effects hurt developer productivity and program correctness?
+
+Side effects makes it difficult for you to reason about the correctness of your program locally. If you have a referentially transparent function (i.e., free of side effects), then you can look at your function and know exactly what it does, meaning the proof of correctness may be limited to the case of testing the response of the function to given inputs. When your program is not referentially transparent, you need to obtain knowledge about external processes, global variables/states, and there is no way to prove correctness of your function by simply running unit tests. You need to run acceptance testing and user testing every time you make a small change in a function. This can have _expensive_ ramification in the real world.
+
+We don't want to get rid of the interesting parts of our program (e.g., user interface) in fear that they will introduce side effects into our program. Rather we want to introduce FP design patterns into our programs to protect us from the negative consequences of side effects. How do we do that? Monads. 
+
+There are typically four types of monads to express four types of side effects:
+
+1. Exception - Takes into account operations that can fail. The exception monad is [implemented](http://blog.xebia.com/try-option-or-either/) using `Option`, `Either`, or `Try` in Scala.
+2. Future - Takes into account that computation takes time (latency). The future monad is implemented using `Future` in Scala, which does a callback when the task is complete.
+3. Iterable - Reacting to synchronous data streams.
+4. Observable - Reacting to asynchronous data streams.
+
 
 ### Monoid
 
@@ -339,7 +330,7 @@ strLen([res3, res2, res1]) //> 1
 What do we notice?  
 
 * The function `isEmpty` will provide the same correct result no matter whether the ``"a"`` lives in `arr1`, `arr2` or `arr3`. The result does not hinges on the groupings of the strings (Associativity).
-* The final result does not care how many empty strings you have as any string `s` concatenated with the empty string is that string (i.e., s + "" == s). However, having a single non-empty string changes your result.
+* The final result does not care how many empty strings you have as any string `s` concatenated with the empty string is that string (i.e., `s + "" == s`). However, having a single non-empty string changes your result.
 * The order in which the string inputs are provided to the function `isEmpty` does not impact the final result (Commuativity).
 
 This is recipe for correctness in asynchronous programming and parallel computing.
