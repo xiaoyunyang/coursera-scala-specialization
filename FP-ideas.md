@@ -29,7 +29,7 @@ println(s"The average of $list is $ave") //> The average of List(1.0, 2.0, 3.0) 
 
 30 years ago, the emphasis was on creating and maintaining small code base that need to fulfill a set of functional requirements. Computational power was a huge constraint. Now we live in a different world. We build complex programs with many moving parts. Programs are expected to be reliable, responsive, and error resistant. Servers are scattered throughout the world so things like latency and multicore programming became the new pain points.
 
-The most apparent benefits of functional programming are:
+The most visible benefits of functional programming are:
 
 * developer productivity - better code reusability and modularity, which is made possible by treating functions as composable primitives and something that describes behavior in the abstract (i.e., without binding it to actual use cases or data). 
 * Program correctness - a benfit of referential transparency
@@ -63,7 +63,7 @@ This section talks about how to use functional programming concepts to design ro
 
 ### Functional Programming Design Patterns
 
-In FP, we don’t want to hardcode values or hardcode function behaviors. Thus, we parameterize the behavior as another function.  How do we do that? We have to start thinking about functions as something configurable and composable. These are the bread and butter concepts that FP-ers must come to embrace as a way of life:
+In FP, we don’t want to hard code values or hard code function behaviors. Thus, we parameterize the behavior as another function.  How do we do that? We have to start thinking about functions as something configurable and composable. These are the bread and butter concepts that FP-ers must come to embrace as a way of life:
 
 
 * __Functions__:  In functional programming, we think of our programs as pipes for data to travel through. Functions can be inputs and outputs.
@@ -249,7 +249,7 @@ __Recursion__
 
 
 
-__Referential Transparency (RT)__
+### Referential Transparency (RT)
 
 As [FP in Scala](https://github.com/fpinscala/fpinscala/wiki/Chapter-1:-What-is-functional-programming%3F) puts it:
 > Referential transparency forces the invariant that everything a function does is represented by the value that it returns, according to the result type of the function. At each step we replace a term with an equivalent one; computation proceeds by substituting equals for equals. In other words, RT enables equational reasoning about programs.
@@ -258,6 +258,37 @@ I like the second definition better:
 > Another way of understanding RT is that the meaning of RT expressions does not depend on context and may be reasoned about locally, whereas the meaning of non-RT expressions is context-dependent and requires more global reasoning.
 
 The obvious benefit is RT makes the program less prone to bugs. Since RT forces data immutability, making a change to your data requires you to create new data, which hurts memory performance. Similar to recursion, there are things "under the hood" that can be done to improve memory performance while still enforcing immutability at a high level. 
+
+We want to write referential transparent programs to avoid side effects. What are side effects and what are the dangers of side effects?
+
+__Side Effect__
+> A side effect is any application state change that is observable outside the called function other than its returned value. ~ [Eric Elliott](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
+
+Many programs designed with a user interface are especially at risk of side effects. A tell tale sign is anytime your function is reading or modifying external variable (e.g., a global variable) outside its own function scope. These external variables include:
+
+* Reading user input
+* Writing to a file
+* Reading from a network
+* Reliance on a global state variable
+
+Note: reading/modifying global variables/states is a necessary evil in many real time embedded systems due to microprocessor contraints; however, you should not be doing that if your distributed software is not running on microprocessors
+
+How do side effects hurt developer productivity and program correctness?
+
+Java web applications from the early 2000s are littered with try/catch blocks to guard against unintended/undesirable program states due to external processes (e.g., user input or loss of network connectivity). This practice often results in the _blocking_ of operations downstream until the necessary information is obtained.
+
+Side effects makes it difficult for you to reason about the correctness of your program. If you have a referentially transparent function (i.e., free of side effects), then you can look at your function and know exactly what it does, meaning the proof of correctness is limited to the case of testing the response of the function to given inputs. When your program is not referentially transparent, you need to obtain knowledge about external processes, global variables/states, and there is no way to prove correctness of your function by simply running unit tests. You need to run acceptance testing and user testing every time you make a small change in a function. This can have _expensive_ ramification in the real world.
+
+We don't want to get rid of the interesting parts of our program (e.g., user interface) in fear that they will introduce side effects into our program. That's not the conclusion. Rather we want to introduce functional programming design patterns into our programs to protect us from the negative consequences of side effects. How do we do that? Monads. 
+
+__Monads__
+
+There are typically four types of monads to express four types of side effects:
+
+1. Exception - Takes into account operations that can fail. The exception monad is [implemented](http://blog.xebia.com/try-option-or-either/) using `Option`, `Either`, or `Try` in Scala.
+2. Future - Takes into account that computation takes time (latency). The future monad is implemented using `Future` in Scala, which does a callback when the task is complete.
+3. Iterable - Reacting to synchronous data streams.
+4. Observable - Reacting to asynchronous data streams.
 
 
 ### Laziness
