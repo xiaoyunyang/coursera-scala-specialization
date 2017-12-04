@@ -158,7 +158,8 @@ List(1,2,3) ++ List("a", "b", "c") //> res: List[Any] = List(1, 2, 3, a, b, c)
 List(1,2,3) ++ "abc" 
 //> res: List[AnyVal] = List(1, 2, 3, a, b, c)
 
-"abc" ++ List(1,2,3) //res: scala.collection.immutable.IndexedSeq[AnyVal] = Vector(a, b, c, 1, 2, 3)
+"abc" ++ List(1,2,3) 
+//res: scala.collection.immutable.IndexedSeq[AnyVal] = Vector(a, b, c, 1, 2, 3)
 
 "abc" ++ "def" //> res: String = abcdef
 "abc" + "def" //> res: String = abcdef
