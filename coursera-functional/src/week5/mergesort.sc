@@ -82,7 +82,7 @@ object mergesort {
   
   /** Implicit parameter of type T */
   /* There is alreadya a class in the standard library (scala.math.Ordering[T] that
-  	 represents prdering. This provides ways to compare elements of type T. So instead of
+  	 represents ordering. This provides ways to compare elements of type T. So instead of
   	 parameterizing with the lt operation directly, we could parameterize with Ordering
   	 instead
   */
